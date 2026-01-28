@@ -1,0 +1,25 @@
+Magma V2.28-27    Sun Dec  7 2025 17:44:16 on socrates [Seed = 1815283451]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "etale-algebras.mag"
+Loading "etale-algebras-Q2.mag"
+2-adic part of C3: 23/7 + 4/7 *2^(-1/3) + 4/7 *2^(-2/3)
+2-adic part of Loughran-Santens: 23/8 + 1/2 *2^(-1/3) + 1/2 *2^(-2/3)
+Coefficient-by-coefficient ratios to C3: [ 8/7, 8/7, 8/7 ]
+Loading "etale-algebras-Q3.mag"
+3-adic part of C3: 112/39 + 8/13 *3^(-1/3) + 8/13 *3^(-2/3)
+3-adic part of Loughran-Santens: 56/27 + 4/9 *3^(-1/3) + 4/9 *3^(-2/3)
+Coefficient-by-coefficient ratios: [ 18/13, 18/13, 18/13 ]
+
+Total time: 31.620 seconds, Total memory usage: 96.16MB

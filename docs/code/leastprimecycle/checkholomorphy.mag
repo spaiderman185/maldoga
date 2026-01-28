@@ -1,0 +1,503 @@
+function FindMonomialCharacters(G)
+    // Input: Finite group G
+    // Output: A sequence of the inner product sequence, with rational coefficients
+
+    // Given a finite group G, compute the monomial characters of G
+    // The characters will be expressed in terms of their coefficients with respect to the irreps of G
+    // For large groups G, this can be expensive.  It's best to call this function only once.
+
+    CT := CharacterTable(G);
+    SGs := Subgroups(G);
+
+    Mons := [];
+
+    for h in SGs do
+        CH := CharacterTable(h`subgroup);
+        for chi in [chi : chi in CH | chi(1) eq 1] do
+            Include(~Mons, [Rationals()!InnerProduct(Induction(chi,G),psi) : psi in CT]);
+        end for;
+    end for;
+
+    return Mons;
+end function;
+
+function InConvexHull(Vecs, Pt)
+    // Input: A sequence Vecs of sequences, and a sequence Pt.
+    // Output: A boolean based on whether Pt is in the convex hull of the vectors in Vecs
+
+    // The key point here is that deciding whether something is in the convex hull is a linear programming problem.
+    // Let x be the weight vector associated with the desired linear combination of vectors
+    // We have the constraint that Vecs*x = Pt.
+    // We wish to solve (1,...,1) * x = 1, subject to x >= 0.
+
+    n := #Vecs;
+    m := #Vecs[1];
+
+    // We are considering n vectors in R^m
+
+    Constraints := [ [ 0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..n]] : i in [1..n]];
+    Constraints := Constraints cat [[ 1 : i in [1..n]]];
+
+    for i in [1..m] do
+        Constraints := Constraints cat [[Vecs[j][i] : j in [1..n]]];
+    end for;
+
+    Relations := [ [1] : i in [1..n]] cat [ [-1] ] cat [ [0] : i in [1..m]];
+
+    Targets := [ [0] : i in [1..n]] cat [ [1] ] cat [ [Pt[i]] : i in [1..m]];
+
+    Obj := [ [ 1 : i in [1..n]]];
+
+    Constraints := Matrix(Rationals(), Constraints);
+    Relations := Matrix(Rationals(), Relations);
+    Targets := Matrix(Rationals(), Targets);
+    Obj := Matrix(Rationals(), Obj);
+
+    wts,success := MinimalSolution(Constraints,Relations,Targets,Obj);
+
+    if success eq 0 then
+        return true;
+    else
+        return false;
+    end if;
+end function;
+
+function InCone(Vecs, Pt)
+    // Input: A sequence Vecs of sequences, and a sequence Pt.
+    // Output: A boolean based on whether Pt is in the cone spanned by the vectors in Vecs
+
+    // The key point here is that deciding whether something is in the cone is a linear programming problem.
+    // Let x be the weight vector associated with the desired linear combination of vectors
+    // We have the constraint that Vecs*x = Pt.
+    // We wish to solve (1,...,1) * x = 1, subject to x >= 0.
+
+    n := #Vecs;
+    m := #Vecs[1];
+
+    // We are considering n vectors in R^m
+
+    Constraints := [ [ 0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..n]] : i in [1..n]];
+//    Constraints := Constraints cat [[ 1 : i in [1..n]]];
+
+    for i in [1..m] do
+        Constraints := Constraints cat [[Vecs[j][i] : j in [1..n]]];
+    end for;
+
+//    Relations := [ [1] : i in [1..n]] cat [ [-1] ] cat [ [0] : i in [1..m]];
+    Relations := [ [1] : i in [1..n]] cat [ [0] : i in [1..m]];
+
+//    Targets := [ [0] : i in [1..n]] cat [ [1] ] cat [ [Pt[i]] : i in [1..m]];
+    Targets := [ [0] : i in [1..n]] cat [ [Pt[i]] : i in [1..m]];
+
+    Obj := [ [ 1 : i in [1..n]]];
+
+    Constraints := Matrix(Rationals(), Constraints);
+    Relations := Matrix(Rationals(), Relations);
+    Targets := Matrix(Rationals(), Targets);
+    Obj := Matrix(Rationals(), Obj);
+
+    wts,success := MinimalSolution(Constraints,Relations,Targets,Obj);
+
+    if success eq 0 then
+        return true;
+    else
+        return false;
+    end if;
+end function;
+
+function FindMonomialConeBasis(G : Mons:=[])
+	// Input: A finite group G
+	//			Optional: A computed list of monomial characters to use
+	// Output: A list of monomial characters that form a basis for the monomial cone
+	
+	if #Mons eq 0 then
+		Mons := FindMonomialCharacters(G);
+	end if;
+	
+	// Might be unnecessary, but I'm going to sort the monomial characters by their L1 norm wrt the irreps
+	// My instinct is that the smaller the L1 norm, the more likely a character is to show up in the basis
+	PaddedMons := [ [&+m] cat m : m in Mons];
+	MaxL1 := Maximum([m[1] : m in PaddedMons]);
+	MonsSorted:=&cat[[m[2..#Mons[1]+1] : m in PaddedMons | m[1] eq i] : i in [1..MaxL1]];
+	
+	// Form an initial spanning set by walking through the sorted list of monomials, and adding a vector if it is not in the cone spanned by the previous vectors
+	
+	BasisIndices := [1];
+	for i in [2..#MonsSorted] do
+		if InCone(MonsSorted[BasisIndices],MonsSorted[i]) eq false then
+			Append(~BasisIndices,i);
+		end if;
+	end for;
+	
+	// Now iteratively prune by walking through the initial spanning set, and checking whether the vector is in the cone spanned by the others
+	
+	current_ind := 1;
+	while current_ind le #BasisIndices do
+		if InCone(MonsSorted[Remove(BasisIndices,current_ind)],MonsSorted[BasisIndices[current_ind]]) then
+			// The current element is in the cone spanned by the others.  It can be removed.
+			// The index does not need to be updated in this case, since removing it from the list of basis elements shifts things
+			Remove(~BasisIndices,current_ind);
+		else
+			// The current element is not in the cone spanned by the others.
+			// Move on to the next element
+			
+			current_ind := current_ind+1;
+		end if;
+	end while;
+	
+	// We've now got a basis
+	
+	return MonsSorted[BasisIndices];
+end function;
+
+function IsHolomorphic(G, f : Mons:=[])
+    // Input: A finite group G, and either a class function f or its dual rep
+    //        Optional: A computed list of the monomial characters to use
+    // Output: A boolean based on whether f can be expressed as a non-negative linear combination of the monomial characters
+
+    // Basic idea: project the (Fourier transform of) f to the unit simplex
+    // Then check whether it's in the convex hull of the projection of the monomials
+
+    // First, check if Mons has already been computed
+
+    if #Mons eq 0 then
+        Mons := FindMonomialCharacters(G);
+    end if;
+
+    // Compute the projection of the monomial characters onto the unit simplex
+
+    SimpMons := [];
+    for m in Mons do
+        Append(~SimpMons, [m[i]/&+m : i in [1..#m]]);
+    end for;
+
+    // Now, check whether f is given as a class function or its Fourier transform
+
+    fdual := f;
+
+    if Type(f) ne SeqEnum then
+        fdual := [Rationals()!InnerProduct(f,chi) : chi in CharacterTable(G)];
+    end if;
+
+    if &+fdual eq 0 then
+        // If the sum of the coefficients is 0, then either f is 0 or it involves some negative powers
+        // We return true if f=0, and false otherwise
+        return fdual eq [ Rationals()!0 : i in [1..#fdual]];
+    elif &+fdual lt 0 then
+        // If the sum is negative, definitely false
+        return false;
+    end if;
+
+    Simpf := [fdual[i]/&+fdual : i in [1..#fdual]];
+
+    return InConvexHull( SimpMons, Simpf );
+end function;
+
+function IsMonomialGroup(G : Mons := [])
+    // Input: Finite group G
+    // Output: true/false according to whether G is a monomial group
+
+    if #Mons eq 0 then
+        Mons := FindMonomialCharacters(G);
+    end if;
+
+    classes := #Mons[1];
+    return &and[ ([0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..classes]]) in Mons : i in [1..classes] ];
+end function;
+
+function IsHolomorphicGroup(G : Mons := [])
+    // Input: Finite group G
+    // Output: true/false according to whether G every irrep of G is provably holomorphic
+
+    if #Mons eq 0 then
+        Mons := FindMonomialCharacters(G);
+    end if;
+
+    classes := #Mons[1];
+    return &and[ IsHolomorphic(G, ([0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..classes]]) : Mons:=Mons) : i in [1..classes] ];
+end function;
+
+procedure AnalyzeGroupHolomorphy(G)
+    // Analyze the group G with respect to the functions f+ and f-
+
+    print "Analyzing the least prime properties of the group",G;
+    print "";
+
+    CT := CharacterTable(G);
+    mons := FindMonomialCharacters(G);
+    Cs := ConjugacyClasses(G);
+
+    fplus := [];
+    fminus := [];
+
+    for c in Cs do
+        if c[1] ne 1 then
+            Append(~fplus,[ Max(Rationals()!chi(c[3]),0) : chi in CT]);
+            Append(~fminus, [ -1*Min(Rationals()!chi(c[3]),0) : chi in CT]);
+        end if;
+    end for;
+
+    for i in [1..#Cs - 1] do
+        print "For the class rep'd by",Cs[i+1][3], "we find:";
+        plushom := IsHolomorphic(G,fplus[i] : Mons:=mons);
+        minushom := IsHolomorphic(G,fminus[i] : Mons:=mons);
+
+        if plushom then
+            print "    fplus is provably holomorphic.";
+        else
+            print "    fplus is NOT provably holomorphic.";
+        end if;
+        if minushom then
+            print "    fminus is provably holomorphic.";
+        else
+            print "    fminus is NOT provably holomorphic.";
+        end if;
+        print "";
+    end for;
+
+end procedure;
+
+function FindBestBasepoint(G,f : Mons:=[], ForceIntegral:=false)
+    // Input: Group G, class function f
+    // Output: The best shift f0 so that f0 and f0+f are provably holomorphic, with f0 not having a pole
+
+    if #Mons eq 0 then
+        Mons := FindMonomialCharacters(G);
+    end if;
+    CT:=CharacterTable(G);
+
+    n := #Mons;
+
+    // Setup for linear programming:
+    //   We'll take two non-negative combinations of the monomials (one for f0, one for f0+f)
+    //   We'll add a constraint that these combinations actually have to differ by f
+    //   The objective function will be (almost) the conductor of f0
+
+    Constraints := [ [ 0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..2*n]] : i in [1..2*n]];
+
+    poles := [ i : i in [1..n] | Mons[i][1] ne 0];
+
+    Constraints := Constraints cat [ [0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..2*n]] : i in poles ];
+    
+    Constraints := Constraints cat  [ [-Mons[j][i] : j in [1..n]] cat [Mons[j][i] : j in [1..n]] : i in [1..#CT]];
+
+    Relations := [ [1] : i in [1..2*n]] cat [ [0] : i in [1..#poles]] cat [ [0] : i in [1..#CT]];
+
+    fdual := f;
+    if Type(f) ne SeqEnum then
+        fdual:= [ Rationals()!InnerProduct(f,chi) : chi in CT];
+    end if;
+
+    Targets := [ [Rationals()!0] : i in [1..2*n]] cat [ [Rationals()!0] : i in poles] cat [[fdual[i]] : i in [1..#CT]];
+
+    degs := [&+[m[i]*CT[i](1) : i in [1..#CT]] : m in Mons];
+
+    Obj := [degs cat [0 : i in [1..n]]];
+
+    Constraints := Matrix(Rationals(), Constraints);
+    Relations := Matrix(Rationals(), Relations);
+    Targets := Matrix(Rationals(), Targets);
+    Obj := Matrix(Rationals(), Obj);
+
+    wts := [];
+    if ForceIntegral eq false then
+        wts,b := MinimalSolution(Constraints,Relations,Targets,Obj);
+    else
+        wts,b := MinimalIntegerSolution(Constraints,Relations,Targets,Obj);
+    end if;
+
+    f0 := [ &+[wts[1][j]*Mons[j][i] : j in [1..n]] : i in [1..#CT]];
+    return f0;
+end function;
+
+function FindBestBasepointWeights(G,f : Mons:=[], ForceIntegral:=false)
+    // Input: Group G, class function f
+    // Output: The best shift f0 so that f0 and f0+f are provably holomorphic, with f0 not having a pole
+
+    if #Mons eq 0 then
+        Mons := FindMonomialCharacters(G);
+    end if;
+    CT:=CharacterTable(G);
+
+    n := #Mons;
+
+    // Setup for linear programming:
+    //   We'll take two non-negative combinations of the monomials (one for f0, one for f0+f)
+    //   We'll add a constraint that these combinations actually have to differ by f
+    //   The objective function will be (almost) the conductor of f0
+
+    Constraints := [ [ 0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..2*n]] : i in [1..2*n]];
+
+    poles := [ i : i in [1..n] | Mons[i][1] ne 0];
+
+    Constraints := Constraints cat [ [0 : j in [1..i-1]] cat [1] cat [0 : j in [i+1..2*n]] : i in poles ];
+    
+    Constraints := Constraints cat  [ [-Mons[j][i] : j in [1..n]] cat [Mons[j][i] : j in [1..n]] : i in [1..#CT]];
+
+    Relations := [ [1] : i in [1..2*n]] cat [ [0] : i in [1..#poles]] cat [ [0] : i in [1..#CT]];
+
+    fdual := f;
+    if Type(f) ne SeqEnum then
+        fdual:= [ Rationals()!InnerProduct(f,chi) : chi in CT];
+    end if;
+
+    Targets := [ [Rationals()!0] : i in [1..2*n]] cat [ [Rationals()!0] : i in poles] cat [[fdual[i]] : i in [1..#CT]];
+
+    degs := [&+[m[i]*CT[i](1) : i in [1..#CT]] : m in Mons];
+
+    Obj := [degs cat [0 : i in [1..n]]];
+
+    Constraints := Matrix(Rationals(), Constraints);
+    Relations := Matrix(Rationals(), Relations);
+    Targets := Matrix(Rationals(), Targets);
+    Obj := Matrix(Rationals(), Obj);
+
+    wts := [];
+    if ForceIntegral eq false then
+        wts,b := MinimalSolution(Constraints,Relations,Targets,Obj);
+    else
+        wts,b := MinimalIntegerSolution(Constraints,Relations,Targets,Obj);
+    end if;
+
+    return wts;
+end function;
+
+procedure AnalyzeGroupShifts(G)
+    // Analyze the group G with respect to the functions f+ and f-
+
+    print "Analyzing the least prime properties of the group",G;
+    print "";
+
+    CT := CharacterTable(G);
+    mons := FindMonomialCharacters(G);
+    Cs := ConjugacyClasses(G);
+
+    fplus := [];
+    fminus := [];
+    f := [];
+
+    for c in Cs do
+        if c[1] ne 1 then
+            Append(~fplus,[ Max(Rationals()!chi(c[3]),0) : chi in CT]);
+            Append(~fminus, [ -1*Min(Rationals()!chi(c[3]),0) : chi in CT]);
+            Append(~f, [Rationals()!chi(c[3]) : chi in CT]);
+        end if;
+    end for;
+
+    maxq := 0;
+    maxc := [];
+
+    for i in [1..#Cs - 1] do
+        print "For the class rep'd by",Cs[i+1][3], "we find:";
+        plushom := IsHolomorphic(G,fplus[i] : Mons:=mons);
+        minushom := IsHolomorphic(G,fminus[i] : Mons:=mons);
+        f0R := FindBestBasepoint(G,f[i] : Mons:=mons);
+        norm := #G;
+        f0 := [Integers()!Round(norm*c) : c in f0R];
+        renorm := GCD(f0);
+        f0 := [c / renorm : c in f0];
+
+        if Abs(&+[(norm*f0R[j]/renorm-f0[j])^2 : j in [1..#CT]]) ge 0.1 then
+            print "    The optimal basepoint had a bad denominator, brute forcing integrality";
+            f0R :=FindBestBasepoint(G,f[i] : Mons:=mons, ForceIntegral:=true);
+            f0 := [Integers()!Round(c) : c in f0R];
+        end if;
+
+        if plushom then
+            print "    fplus is provably holomorphic.";
+        else
+            print "    fplus is NOT provably holomorphic.";
+        end if;
+        if minushom then
+            print "    fminus is provably holomorphic.";
+        else
+            print "    fminus is NOT provably holomorphic.";
+        end if;
+
+        print "    The best basepoint is",f0;
+        print "        ....verifying holomorphy.";
+        h0 := IsHolomorphic(G, f0 : Mons:=mons);
+        hp := IsHolomorphic(G, [f0[j]+f[i][j] : j in [1..#CT]] : Mons:=mons);
+
+        if h0 and hp then
+            print "        ....verified.";
+        else
+            if not h0 then
+                print "        ....f0 is not holomorphic!";
+            end if;
+            if not hp then
+                print "        ....f0+(fplus-fminus) is not holomorphic!";
+            end if;
+        end if;
+
+        q := &+[f0[j]*CT[j](1) : j in [1..#CT]];
+        print "    It has degree",q;
+
+        if Integers()!q gt maxq then
+            maxq:=Integers()!q;
+            maxc:=[i+1];
+        elif q eq maxq then
+            Append(~maxc,i+1);
+        end if;
+
+        print "";
+    end for;
+
+    print "Biggest classes were those rep'd by:";
+    for i in maxc do
+        print Cs[i][3];
+    end for;
+    print "They have degree",maxq;
+    print "Ratio:",maxq/#G,"=",maxq/#G*1.0;
+
+end procedure;
+
+procedure AnalyzeGroupShiftsOverQ(G)
+    // Analyze the group G with respect to the functions f+ and f-
+
+    print "Analyzing the least prime properties of the group",G;
+    print "";
+
+    CT := CharacterTable(G);
+    mons := FindMonomialCharacters(G);
+    Cs := ConjugacyClasses(G);
+
+    fplus := [];
+    fminus := [];
+    f := [];
+
+    for c in Cs do
+        if c[1] ne 1 then
+            Append(~fplus,[ Max(Rationals()!chi(c[3]),0) : chi in CT]);
+            Append(~fminus, [ -1*Min(Rationals()!chi(c[3]),0) : chi in CT]);
+            Append(~f, [Rationals()!chi(c[3]) : chi in CT]);
+        end if;
+    end for;
+
+    maxq := 0;
+    maxc := [];
+
+    for i in [1..#Cs - 1] do
+        print "For the class rep'd by",Cs[i+1][3], "we find:";
+        f0 := FindBestBasepoint(G,f[i] : Mons:=mons);
+        q := &+[f0[j]*RealField()!CT[j](1) : j in [1..#CT]];
+        print "    The best basepoint has degree",q;
+
+        if q gt maxq then
+            maxq:=q;
+            maxc:=[i+1];
+        elif q eq maxq then
+            Append(~maxc,i+1);
+        end if;
+
+        print "";
+    end for;
+
+    print "Biggest classes were those rep'd by:";
+    for i in maxc do
+        print Cs[i][3];
+    end for;
+    print "They have degree",maxq;
+    print "Ratio:",maxq/#G;
+
+end procedure;

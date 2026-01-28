@@ -1,0 +1,1066 @@
+> time VerifyThroughDegree(40);
+There are 121 possible socle types of degree <= 40
+Working with socle 1 of 121
+  Socle type true [* <17, 5, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 2 of 121
+  Socle type true [* <17, 5, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 3 of 121
+  Socle type true [* <17, 5, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 4 of 121
+  Socle type true [* <17, 5, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 5 of 121
+  Socle type true [* <17, 5, 0> *] ^ 5
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 10 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 10
+    Working with cyclic image 2 of 10
+    Working with cyclic image 3 of 10
+    Working with cyclic image 4 of 10
+    Working with cyclic image 5 of 10
+    Working with cyclic image 6 of 10
+    Working with cyclic image 7 of 10
+    Working with cyclic image 8 of 10
+    Working with cyclic image 9 of 10
+    Working with cyclic image 10 of 10
+Working with socle 6 of 121
+  Socle type true [* <17, 5, 0> *] ^ 6
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 22 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 22
+    Working with cyclic image 2 of 22
+    Working with cyclic image 3 of 22
+    Working with cyclic image 4 of 22
+    Working with cyclic image 5 of 22
+    Working with cyclic image 6 of 22
+    Working with cyclic image 7 of 22
+    Working with cyclic image 8 of 22
+    Working with cyclic image 9 of 22
+    Working with cyclic image 10 of 22
+    Working with cyclic image 11 of 22
+    Working with cyclic image 12 of 22
+    Working with cyclic image 13 of 22
+    Working with cyclic image 14 of 22
+    Working with cyclic image 15 of 22
+    Working with cyclic image 16 of 22
+    Working with cyclic image 17 of 22
+    Working with cyclic image 18 of 22
+    Working with cyclic image 19 of 22
+    Working with cyclic image 20 of 22
+    Working with cyclic image 21 of 22
+    Working with cyclic image 22 of 22
+Working with socle 7 of 121
+  Socle type true [* <17, 5, 0> *] ^ 7
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 50 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 50
+    Working with cyclic image 2 of 50
+    Working with cyclic image 3 of 50
+    Working with cyclic image 4 of 50
+    Working with cyclic image 5 of 50
+    Working with cyclic image 6 of 50
+    Working with cyclic image 7 of 50
+    Working with cyclic image 8 of 50
+    Working with cyclic image 9 of 50
+    Working with cyclic image 10 of 50
+    Working with cyclic image 11 of 50
+    Working with cyclic image 12 of 50
+    Working with cyclic image 13 of 50
+    Working with cyclic image 14 of 50
+    Working with cyclic image 15 of 50
+    Working with cyclic image 16 of 50
+    Working with cyclic image 17 of 50
+    Working with cyclic image 18 of 50
+    Working with cyclic image 19 of 50
+    Working with cyclic image 20 of 50
+    Working with cyclic image 21 of 50
+    Working with cyclic image 22 of 50
+    Working with cyclic image 23 of 50
+    Working with cyclic image 24 of 50
+    Working with cyclic image 25 of 50
+    Working with cyclic image 26 of 50
+    Working with cyclic image 27 of 50
+    Working with cyclic image 28 of 50
+    Working with cyclic image 29 of 50
+    Working with cyclic image 30 of 50
+    Working with cyclic image 31 of 50
+    Working with cyclic image 32 of 50
+    Working with cyclic image 33 of 50
+    Working with cyclic image 34 of 50
+    Working with cyclic image 35 of 50
+    Working with cyclic image 36 of 50
+    Working with cyclic image 37 of 50
+    Working with cyclic image 38 of 50
+    Working with cyclic image 39 of 50
+    Working with cyclic image 40 of 50
+    Working with cyclic image 41 of 50
+    Working with cyclic image 42 of 50
+    Working with cyclic image 43 of 50
+    Working with cyclic image 44 of 50
+    Working with cyclic image 45 of 50
+    Working with cyclic image 46 of 50
+    Working with cyclic image 47 of 50
+    Working with cyclic image 48 of 50
+    Working with cyclic image 49 of 50
+    Working with cyclic image 50 of 50
+Working with socle 8 of 121
+  Socle type true [* <17, 5, 0> *] ^ 8
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 93 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 93
+    Working with cyclic image 2 of 93
+    Working with cyclic image 3 of 93
+    Working with cyclic image 4 of 93
+    Working with cyclic image 5 of 93
+    Working with cyclic image 6 of 93
+    Working with cyclic image 7 of 93
+    Working with cyclic image 8 of 93
+    Working with cyclic image 9 of 93
+    Working with cyclic image 10 of 93
+    Working with cyclic image 11 of 93
+    Working with cyclic image 12 of 93
+    Working with cyclic image 13 of 93
+    Working with cyclic image 14 of 93
+    Working with cyclic image 15 of 93
+    Working with cyclic image 16 of 93
+    Working with cyclic image 17 of 93
+    Working with cyclic image 18 of 93
+    Working with cyclic image 19 of 93
+    Working with cyclic image 20 of 93
+    Working with cyclic image 21 of 93
+    Working with cyclic image 22 of 93
+    Working with cyclic image 23 of 93
+    Working with cyclic image 24 of 93
+    Working with cyclic image 25 of 93
+    Working with cyclic image 26 of 93
+    Working with cyclic image 27 of 93
+    Working with cyclic image 28 of 93
+    Working with cyclic image 29 of 93
+    Working with cyclic image 30 of 93
+    Working with cyclic image 31 of 93
+    Working with cyclic image 32 of 93
+    Working with cyclic image 33 of 93
+    Working with cyclic image 34 of 93
+    Working with cyclic image 35 of 93
+    Working with cyclic image 36 of 93
+    Working with cyclic image 37 of 93
+    Working with cyclic image 38 of 93
+    Working with cyclic image 39 of 93
+    Working with cyclic image 40 of 93
+    Working with cyclic image 41 of 93
+    Working with cyclic image 42 of 93
+    Working with cyclic image 43 of 93
+    Working with cyclic image 44 of 93
+    Working with cyclic image 45 of 93
+    Working with cyclic image 46 of 93
+    Working with cyclic image 47 of 93
+    Working with cyclic image 48 of 93
+    Working with cyclic image 49 of 93
+    Working with cyclic image 50 of 93
+    Working with cyclic image 51 of 93
+    Working with cyclic image 52 of 93
+    Working with cyclic image 53 of 93
+    Working with cyclic image 54 of 93
+    Working with cyclic image 55 of 93
+    Working with cyclic image 56 of 93
+    Working with cyclic image 57 of 93
+    Working with cyclic image 58 of 93
+    Working with cyclic image 59 of 93
+    Working with cyclic image 60 of 93
+    Working with cyclic image 61 of 93
+    Working with cyclic image 62 of 93
+    Working with cyclic image 63 of 93
+    Working with cyclic image 64 of 93
+    Working with cyclic image 65 of 93
+    Working with cyclic image 66 of 93
+    Working with cyclic image 67 of 93
+    Working with cyclic image 68 of 93
+    Working with cyclic image 69 of 93
+    Working with cyclic image 70 of 93
+    Working with cyclic image 71 of 93
+    Working with cyclic image 72 of 93
+    Working with cyclic image 73 of 93
+    Working with cyclic image 74 of 93
+    Working with cyclic image 75 of 93
+    Working with cyclic image 76 of 93
+    Working with cyclic image 77 of 93
+    Working with cyclic image 78 of 93
+    Working with cyclic image 79 of 93
+    Working with cyclic image 80 of 93
+    Working with cyclic image 81 of 93
+    Working with cyclic image 82 of 93
+    Working with cyclic image 83 of 93
+    Working with cyclic image 84 of 93
+    Working with cyclic image 85 of 93
+    Working with cyclic image 86 of 93
+    Working with cyclic image 87 of 93
+    Working with cyclic image 88 of 93
+    Working with cyclic image 89 of 93
+    Working with cyclic image 90 of 93
+    Working with cyclic image 91 of 93
+    Working with cyclic image 92 of 93
+    Working with cyclic image 93 of 93
+Working with socle 9 of 121
+  Socle type true [* <17, 6, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 10 of 121
+  Socle type true [* <17, 6, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 11 of 121
+  Socle type true [* <17, 6, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 12 of 121
+  Socle type true [* <17, 6, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 15 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 15
+    Working with cyclic image 2 of 15
+    Working with cyclic image 3 of 15
+    Working with cyclic image 4 of 15
+    Working with cyclic image 5 of 15
+    Working with cyclic image 6 of 15
+    Working with cyclic image 7 of 15
+    Working with cyclic image 8 of 15
+    Working with cyclic image 9 of 15
+    Working with cyclic image 10 of 15
+    Working with cyclic image 11 of 15
+    Working with cyclic image 12 of 15
+    Working with cyclic image 13 of 15
+    Working with cyclic image 14 of 15
+    Working with cyclic image 15 of 15
+Working with socle 13 of 121
+  Socle type true [* <17, 6, 0> *] ^ 5
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 58 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 58
+    Working with cyclic image 2 of 58
+    Working with cyclic image 3 of 58
+    Working with cyclic image 4 of 58
+    Working with cyclic image 5 of 58
+    Working with cyclic image 6 of 58
+    Working with cyclic image 7 of 58
+    Working with cyclic image 8 of 58
+    Working with cyclic image 9 of 58
+    Working with cyclic image 10 of 58
+    Working with cyclic image 11 of 58
+    Working with cyclic image 12 of 58
+    Working with cyclic image 13 of 58
+    Working with cyclic image 14 of 58
+    Working with cyclic image 15 of 58
+    Working with cyclic image 16 of 58
+    Working with cyclic image 17 of 58
+    Working with cyclic image 18 of 58
+    Working with cyclic image 19 of 58
+    Working with cyclic image 20 of 58
+    Working with cyclic image 21 of 58
+    Working with cyclic image 22 of 58
+    Working with cyclic image 23 of 58
+    Working with cyclic image 24 of 58
+    Working with cyclic image 25 of 58
+    Working with cyclic image 26 of 58
+    Working with cyclic image 27 of 58
+    Working with cyclic image 28 of 58
+    Working with cyclic image 29 of 58
+    Working with cyclic image 30 of 58
+    Working with cyclic image 31 of 58
+    Working with cyclic image 32 of 58
+    Working with cyclic image 33 of 58
+    Working with cyclic image 34 of 58
+    Working with cyclic image 35 of 58
+    Working with cyclic image 36 of 58
+    Working with cyclic image 37 of 58
+    Working with cyclic image 38 of 58
+    Working with cyclic image 39 of 58
+    Working with cyclic image 40 of 58
+    Working with cyclic image 41 of 58
+    Working with cyclic image 42 of 58
+    Working with cyclic image 43 of 58
+    Working with cyclic image 44 of 58
+    Working with cyclic image 45 of 58
+    Working with cyclic image 46 of 58
+    Working with cyclic image 47 of 58
+    Working with cyclic image 48 of 58
+    Working with cyclic image 49 of 58
+    Working with cyclic image 50 of 58
+    Working with cyclic image 51 of 58
+    Working with cyclic image 52 of 58
+    Working with cyclic image 53 of 58
+    Working with cyclic image 54 of 58
+    Working with cyclic image 55 of 58
+    Working with cyclic image 56 of 58
+    Working with cyclic image 57 of 58
+    Working with cyclic image 58 of 58
+Working with socle 14 of 121
+  Socle type true [* <17, 6, 0> *] ^ 6
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 171 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 171
+    Working with cyclic image 2 of 171
+    Working with cyclic image 3 of 171
+    Working with cyclic image 4 of 171
+    Working with cyclic image 5 of 171
+    Working with cyclic image 6 of 171
+    Working with cyclic image 7 of 171
+    Working with cyclic image 8 of 171
+    Working with cyclic image 9 of 171
+    Working with cyclic image 10 of 171
+    Working with cyclic image 11 of 171
+    Working with cyclic image 12 of 171
+    Working with cyclic image 13 of 171
+    Working with cyclic image 14 of 171
+    Working with cyclic image 15 of 171
+    Working with cyclic image 16 of 171
+    Working with cyclic image 17 of 171
+    Working with cyclic image 18 of 171
+    Working with cyclic image 19 of 171
+    Working with cyclic image 20 of 171
+    Working with cyclic image 21 of 171
+    Working with cyclic image 22 of 171
+    Working with cyclic image 23 of 171
+    Working with cyclic image 24 of 171
+    Working with cyclic image 25 of 171
+    Working with cyclic image 26 of 171
+    Working with cyclic image 27 of 171
+    Working with cyclic image 28 of 171
+    Working with cyclic image 29 of 171
+    Working with cyclic image 30 of 171
+    Working with cyclic image 31 of 171
+    Working with cyclic image 32 of 171
+    Working with cyclic image 33 of 171
+    Working with cyclic image 34 of 171
+    Working with cyclic image 35 of 171
+    Working with cyclic image 36 of 171
+    Working with cyclic image 37 of 171
+    Working with cyclic image 38 of 171
+    Working with cyclic image 39 of 171
+    Working with cyclic image 40 of 171
+    Working with cyclic image 41 of 171
+    Working with cyclic image 42 of 171
+    Working with cyclic image 43 of 171
+    Working with cyclic image 44 of 171
+    Working with cyclic image 45 of 171
+    Working with cyclic image 46 of 171
+    Working with cyclic image 47 of 171
+    Working with cyclic image 48 of 171
+    Working with cyclic image 49 of 171
+    Working with cyclic image 50 of 171
+    Working with cyclic image 51 of 171
+    Working with cyclic image 52 of 171
+    Working with cyclic image 53 of 171
+    Working with cyclic image 54 of 171
+    Working with cyclic image 55 of 171
+    Working with cyclic image 56 of 171
+    Working with cyclic image 57 of 171
+    Working with cyclic image 58 of 171
+    Working with cyclic image 59 of 171
+    Working with cyclic image 60 of 171
+    Working with cyclic image 61 of 171
+    Working with cyclic image 62 of 171
+    Working with cyclic image 63 of 171
+    Working with cyclic image 64 of 171
+    Working with cyclic image 65 of 171
+    Working with cyclic image 66 of 171
+    Working with cyclic image 67 of 171
+    Working with cyclic image 68 of 171
+    Working with cyclic image 69 of 171
+    Working with cyclic image 70 of 171
+    Working with cyclic image 71 of 171
+    Working with cyclic image 72 of 171
+    Working with cyclic image 73 of 171
+    Working with cyclic image 74 of 171
+    Working with cyclic image 75 of 171
+    Working with cyclic image 76 of 171
+    Working with cyclic image 77 of 171
+    Working with cyclic image 78 of 171
+    Working with cyclic image 79 of 171
+    Working with cyclic image 80 of 171
+    Working with cyclic image 81 of 171
+    Working with cyclic image 82 of 171
+    Working with cyclic image 83 of 171
+    Working with cyclic image 84 of 171
+    Working with cyclic image 85 of 171
+    Working with cyclic image 86 of 171
+    Working with cyclic image 87 of 171
+    Working with cyclic image 88 of 171
+    Working with cyclic image 89 of 171
+    Working with cyclic image 90 of 171
+    Working with cyclic image 91 of 171
+    Working with cyclic image 92 of 171
+    Working with cyclic image 93 of 171
+    Working with cyclic image 94 of 171
+    Working with cyclic image 95 of 171
+    Working with cyclic image 96 of 171
+    Working with cyclic image 97 of 171
+    Working with cyclic image 98 of 171
+    Working with cyclic image 99 of 171
+    Working with cyclic image 100 of 171
+    Working with cyclic image 101 of 171
+    Working with cyclic image 102 of 171
+    Working with cyclic image 103 of 171
+    Working with cyclic image 104 of 171
+    Working with cyclic image 105 of 171
+    Working with cyclic image 106 of 171
+    Working with cyclic image 107 of 171
+    Working with cyclic image 108 of 171
+    Working with cyclic image 109 of 171
+    Working with cyclic image 110 of 171
+    Working with cyclic image 111 of 171
+    Working with cyclic image 112 of 171
+    Working with cyclic image 113 of 171
+    Working with cyclic image 114 of 171
+    Working with cyclic image 115 of 171
+    Working with cyclic image 116 of 171
+    Working with cyclic image 117 of 171
+    Working with cyclic image 118 of 171
+    Working with cyclic image 119 of 171
+    Working with cyclic image 120 of 171
+    Working with cyclic image 121 of 171
+    Working with cyclic image 122 of 171
+    Working with cyclic image 123 of 171
+    Working with cyclic image 124 of 171
+    Working with cyclic image 125 of 171
+    Working with cyclic image 126 of 171
+    Working with cyclic image 127 of 171
+    Working with cyclic image 128 of 171
+    Working with cyclic image 129 of 171
+    Working with cyclic image 130 of 171
+    Working with cyclic image 131 of 171
+    Working with cyclic image 132 of 171
+    Working with cyclic image 133 of 171
+    Working with cyclic image 134 of 171
+    Working with cyclic image 135 of 171
+    Working with cyclic image 136 of 171
+    Working with cyclic image 137 of 171
+    Working with cyclic image 138 of 171
+    Working with cyclic image 139 of 171
+    Working with cyclic image 140 of 171
+    Working with cyclic image 141 of 171
+    Working with cyclic image 142 of 171
+    Working with cyclic image 143 of 171
+    Working with cyclic image 144 of 171
+    Working with cyclic image 145 of 171
+    Working with cyclic image 146 of 171
+    Working with cyclic image 147 of 171
+    Working with cyclic image 148 of 171
+    Working with cyclic image 149 of 171
+    Working with cyclic image 150 of 171
+    Working with cyclic image 151 of 171
+    Working with cyclic image 152 of 171
+    Working with cyclic image 153 of 171
+    Working with cyclic image 154 of 171
+    Working with cyclic image 155 of 171
+    Working with cyclic image 156 of 171
+    Working with cyclic image 157 of 171
+    Working with cyclic image 158 of 171
+    Working with cyclic image 159 of 171
+    Working with cyclic image 160 of 171
+    Working with cyclic image 161 of 171
+    Working with cyclic image 162 of 171
+    Working with cyclic image 163 of 171
+    Working with cyclic image 164 of 171
+    Working with cyclic image 165 of 171
+    Working with cyclic image 166 of 171
+    Working with cyclic image 167 of 171
+    Working with cyclic image 168 of 171
+    Working with cyclic image 169 of 171
+    Working with cyclic image 170 of 171
+    Working with cyclic image 171 of 171
+Working with socle 15 of 121
+  Socle type true [* <"A", 1, 7> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 16 of 121
+  Socle type true [* <"A", 1, 7> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 17 of 121
+  Socle type true [* <"A", 1, 7> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 18 of 121
+  Socle type true [* <"A", 1, 7> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 19 of 121
+  Socle type true [* <"A", 1, 7> *] ^ 5
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 10 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 10
+    Working with cyclic image 2 of 10
+    Working with cyclic image 3 of 10
+    Working with cyclic image 4 of 10
+    Working with cyclic image 5 of 10
+    Working with cyclic image 6 of 10
+    Working with cyclic image 7 of 10
+    Working with cyclic image 8 of 10
+    Working with cyclic image 9 of 10
+    Working with cyclic image 10 of 10
+Working with socle 20 of 121
+  Socle type true [* <17, 7, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 21 of 121
+  Socle type true [* <17, 7, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 22 of 121
+  Socle type true [* <17, 7, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 23 of 121
+  Socle type true [* <17, 7, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 24 of 121
+  Socle type true [* <17, 7, 0> *] ^ 5
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 10 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 10
+    Working with cyclic image 2 of 10
+    Working with cyclic image 3 of 10
+    Working with cyclic image 4 of 10
+    Working with cyclic image 5 of 10
+    Working with cyclic image 6 of 10
+    Working with cyclic image 7 of 10
+    Working with cyclic image 8 of 10
+    Working with cyclic image 9 of 10
+    Working with cyclic image 10 of 10
+Working with socle 25 of 121
+  Socle type true [* <17, 8, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 26 of 121
+  Socle type true [* <17, 8, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 27 of 121
+  Socle type true [* <17, 8, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 28 of 121
+  Socle type true [* <17, 8, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 29 of 121
+  Socle type true [* <17, 8, 0> *] ^ 5
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 10 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 10
+    Working with cyclic image 2 of 10
+    Working with cyclic image 3 of 10
+    Working with cyclic image 4 of 10
+    Working with cyclic image 5 of 10
+    Working with cyclic image 6 of 10
+    Working with cyclic image 7 of 10
+    Working with cyclic image 8 of 10
+    Working with cyclic image 9 of 10
+    Working with cyclic image 10 of 10
+Working with socle 30 of 121
+  Socle type true [* <"A", 1, 8> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 31 of 121
+  Socle type true [* <"A", 1, 8> *] ^ 2
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 32 of 121
+  Socle type true [* <"A", 1, 8> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 4 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 4
+    Working with cyclic image 2 of 4
+    Working with cyclic image 3 of 4
+    Working with cyclic image 4 of 4
+Working with socle 33 of 121
+  Socle type true [* <"A", 1, 8> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 13 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 13
+    Working with cyclic image 2 of 13
+    Working with cyclic image 3 of 13
+    Working with cyclic image 4 of 13
+    Working with cyclic image 5 of 13
+    Working with cyclic image 6 of 13
+    Working with cyclic image 7 of 13
+    Working with cyclic image 8 of 13
+    Working with cyclic image 9 of 13
+    Working with cyclic image 10 of 13
+    Working with cyclic image 11 of 13
+    Working with cyclic image 12 of 13
+    Working with cyclic image 13 of 13
+Working with socle 34 of 121
+  Socle type true [* <17, 9, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 35 of 121
+  Socle type true [* <17, 9, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 36 of 121
+  Socle type true [* <17, 9, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 37 of 121
+  Socle type true [* <17, 9, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 38 of 121
+  Socle type true [* <17, 10, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 39 of 121
+  Socle type true [* <17, 10, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 40 of 121
+  Socle type true [* <17, 10, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 41 of 121
+  Socle type true [* <17, 10, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 42 of 121
+  Socle type true [* <"A", 1, 11>, <17, 11, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 43 of 121
+  Socle type true [* <"A", 1, 11>, <17, 11, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 44 of 121
+  Socle type true [* <"A", 1, 11>, <17, 11, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 45 of 121
+  Socle type true [* <17, 11, 0>, <18, 1, "M11"> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 46 of 121
+  Socle type true [* <17, 11, 0>, <18, 1, "M11"> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 47 of 121
+  Socle type true [* <17, 11, 0>, <18, 1, "M11"> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 48 of 121
+  Socle type true [* <17, 11, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 49 of 121
+  Socle type true [* <17, 11, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 50 of 121
+  Socle type true [* <17, 11, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 51 of 121
+  Socle type true [* <17, 11, 0>, <18, 2, "M12"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 52 of 121
+  Socle type true [* <17, 11, 0>, <18, 2, "M12"> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 53 of 121
+  Socle type true [* <17, 11, 0>, <18, 2, "M12"> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 54 of 121
+  Socle type true [* <17, 12, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 55 of 121
+  Socle type true [* <17, 12, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 56 of 121
+  Socle type true [* <17, 12, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 57 of 121
+  Socle type true [* <"A", 2, 3>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 58 of 121
+  Socle type true [* <"A", 2, 3>, <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 59 of 121
+  Socle type true [* <"A", 2, 3>, <17, 13, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 60 of 121
+  Socle type true [* <17, 13, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 61 of 121
+  Socle type true [* <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 62 of 121
+  Socle type true [* <17, 13, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 63 of 121
+  Socle type true [* <"A", 1, 13>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 64 of 121
+  Socle type true [* <"A", 1, 13>, <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 65 of 121
+  Socle type true [* <17, 14, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 66 of 121
+  Socle type true [* <17, 14, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 67 of 121
+  Socle type true [* <17, 15, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 68 of 121
+  Socle type true [* <17, 15, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 69 of 121
+  Socle type true [* <17, 16, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 70 of 121
+  Socle type true [* <17, 16, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 71 of 121
+  Socle type true [* <"A", 1, 16>, <17, 17, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 72 of 121
+  Socle type true [* <"A", 1, 16>, <17, 17, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 73 of 121
+  Socle type true [* <17, 17, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 74 of 121
+  Socle type true [* <17, 17, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 75 of 121
+  Socle type true [* <"A", 1, 17>, <17, 17, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 76 of 121
+  Socle type true [* <"A", 1, 17>, <17, 17, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 77 of 121
+  Socle type true [* <17, 18, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 78 of 121
+  Socle type true [* <17, 18, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 79 of 121
+  Socle type true [* <17, 19, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 80 of 121
+  Socle type true [* <17, 19, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 81 of 121
+  Socle type true [* <"A", 1, 19>, <17, 19, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 82 of 121
+  Socle type true [* <"A", 1, 19>, <17, 19, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 83 of 121
+  Socle type true [* <17, 20, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 84 of 121
+  Socle type true [* <17, 20, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 85 of 121
+  Socle type true [* <"A", 2, 4> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 86 of 121
+  Socle type true [* <17, 21, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 87 of 121
+  Socle type true [* <17, 11, 0>, <18, 3, "M22"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 88 of 121
+  Socle type true [* <17, 22, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 89 of 121
+  Socle type true [* <17, 23, 0>, <18, 4, "M23"> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 90 of 121
+  Socle type true [* <17, 23, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 91 of 121
+  Socle type true [* <"A", 1, 23>, <17, 23, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 92 of 121
+  Socle type true [* <17, 23, 0>, <18, 5, "M24"> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 93 of 121
+  Socle type true [* <17, 24, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 94 of 121
+  Socle type true [* <17, 25, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 95 of 121
+  Socle type true [* <"A", 1, 25>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 96 of 121
+  Socle type true [* <17, 26, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 97 of 121
+  Socle type true [* <"C", 2, 3> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 98 of 121
+  Socle type true [* <17, 27, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 99 of 121
+  Socle type true [* <"2A", 2, 3>, <17, 8, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 100 of 121
+  Socle type true [* <"A", 1, 27>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 101 of 121
+  Socle type true [* <"C", 3, 2>, <17, 10, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 102 of 121
+  Socle type true [* <17, 28, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 103 of 121
+  Socle type true [* <17, 29, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 104 of 121
+  Socle type true [* <"A", 1, 29>, <17, 29, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 105 of 121
+  Socle type true [* <17, 30, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 106 of 121
+  Socle type true [* <"A", 2, 5>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 107 of 121
+  Socle type true [* <"A", 4, 2>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 108 of 121
+  Socle type true [* <17, 31, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 109 of 121
+  Socle type true [* <"A", 1, 31>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 110 of 121
+  Socle type true [* <17, 32, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 111 of 121
+  Socle type true [* <"A", 1, 32>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 112 of 121
+  Socle type true [* <17, 33, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 113 of 121
+  Socle type true [* <17, 34, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 114 of 121
+  Socle type true [* <17, 35, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 115 of 121
+  Socle type true [* <17, 36, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 116 of 121
+  Socle type true [* <17, 37, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 117 of 121
+  Socle type true [* <"A", 1, 37>, <17, 37, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 118 of 121
+  Socle type true [* <17, 38, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 119 of 121
+  Socle type true [* <17, 39, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 120 of 121
+  Socle type true [* <"A", 3, 3>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 121 of 121
+  Socle type true [* <17, 40, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+0
+Time: 2481.790

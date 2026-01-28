@@ -1,0 +1,491 @@
+/*
+	Magma code related to the paper "Asymptotics for 6-torsion and D_6" extensions, by:
+		Peter Koymans, Robert J. Lemke Oliver, Efthymios Sofos, Frank Thorne.
+		
+	This file computes data associated with the degree 12 etale algebras arising from Galois D6 fields, over Q2.
+	The parametrization exploits a correspondence with pairs (quadratic field, S_3 cubic field).
+	We correspondingly parametrize the degree 12 algebras in the same way.
+	We compute the degree 12 algebra somewhat hackily, by computing global lifts and working there.
+	We then use all of this data to compute the 2-adic contributions to the asymptotic formula proven in Theorem 1.4.
+	We also compare the contribution against the conjectured main term by Loughran and Santens.
+	
+	Code written by Robert Lemke Oliver
+*/
+
+
+
+// **** 2-adic computations ****
+
+// To compute extensions of Q2, we need to set a precision.
+// I just set it high enough so we don't run into an error.
+// That this works is implicitly checked later in the code, but in principle one could/should check via Hensel that this is theoretically sufficient.  
+
+prec2 := 200; 
+Q2 := pAdicField(2, prec2);
+P2<t> := PolynomialRing(Q2);
+
+// Record polynomial representatives for all of the 2-adic quadratic algebras.  Taken from LMFDB.
+// Magma wants all ramified extensions to be defined by Eisenstein polynomials.
+
+QuadAlgRepsQ2 := [
+	t*(t+1), 
+	t^2+t+1,
+	t^2+2*t+2,
+	t^2+2*t+6,
+	t^2+4*t+2,
+	t^2+4*t+10,
+	t^2+2,
+	t^2+10
+];
+
+// Record polynomial representatives for all of the 2-adic cubic algebras.
+// First, get all the reducibles.
+
+CubicAlgRepsQ2 := [(t+2)*q : q in QuadAlgRepsQ2];
+
+// Now, add the irreducibles.  Taken from LMFDB.
+
+CubicAlgRepsQ2 := CubicAlgRepsQ2 cat [
+	t^3+t+1,
+	t^3+2
+];
+
+// Record the automorphism groups and discriminant valuations of these algebras.  Taken from LMFDB.
+
+Cubic_Aut_Q2 := [
+	6,
+	2,
+	2,
+	2,
+	2,
+	2,
+	2,
+	2,
+	3,
+	1
+];
+
+Cubic_Disc_val_Q2 := [
+	0,
+	0,
+	2,
+	2,
+	3,
+	3,
+	3,
+	3,
+	0,
+	2
+];
+
+// Find the 2-adic weights on the cubic algebras
+
+Cubic_mass_Q2:=&+[1/Cubic_Aut_Q2[i]/2^Cubic_Disc_val_Q2[i] : i in [1..#CubicAlgRepsQ2]];
+Cubic_weights_Q2 := [1/Cubic_Aut_Q2[i]/Cubic_mass_Q2 : i in [1..#CubicAlgRepsQ2]];
+
+// Now, find global lifts of each of the polynomial representatives.
+// Setting this up to find multiple irreducible lifts.
+// A future step requires a compositum that's "generically" C2 x S3, and I want some safety there.
+
+P<x> := PolynomialRing(Rationals());
+
+QuadLiftsQ2 := [];
+for f in QuadAlgRepsQ2 do
+	Lifts := [];
+	for i in [1..10] do
+		fQ := P!f + i*64; // Candidate lift
+		
+		// Check:
+		// 1) Irreducible over Q, with right Galois group
+		// 2) Gives the right algebra over Q2.
+		
+		if #GaloisGroup(fQ) eq 2 then
+			fac := Factorization(f);
+			faclift := Factorization(P2!fQ);
+			if #faclift eq #fac then
+				if #faclift eq 2 then
+					// Split can be checked just by having two factors.
+					
+					Append(~Lifts,fQ);
+				else
+					// Now have to check we have the right algebra.
+					
+					K2 := ext< Q2 | f>;
+					K2lift := ext< Q2 | P2!fQ>;
+					if IsIsomorphic(K2,K2lift) then
+						// Have isomorphic extensions, so good
+						
+						Append(~Lifts,fQ);
+					end if;
+				end if;
+			end if;
+		end if;
+	end for;
+	
+	// Check that we've found something
+	if #Lifts eq 0 then
+		print "Flawed assumptions!";
+	end if;
+	
+	Append(~QuadLiftsQ2,Lifts);
+end for;
+
+
+CubicLiftsQ2 := [];
+for f in CubicAlgRepsQ2 do
+	Lifts := [];
+	for i in [1..10] do
+		fQ := P!f + i*64; // Candidate lift
+		
+		// Check:
+		// 1) Irreducible over Q, with right Galois group
+		// 2) Gives the right algebra over Q2.
+		
+		if #GaloisGroup(fQ) eq 6 then
+			fac := Factorization(f);
+			faclift := Factorization(P2!fQ);
+			if #faclift eq #fac then
+				if #faclift eq 3 then
+					// Split can be checked just by having three factors.
+					
+					Append(~Lifts,fQ);
+				elif #faclift eq 2 then
+					// Q2 x (quadratic)
+					// Just need to check that the quadratic is correct
+					
+					g := [p[1] : p in fac | Degree(p[1]) eq 2][1];
+					glift := [p[1] : p in faclift | Degree(p[1]) eq 2][1];
+					
+					K2 := ext< Q2 | g>;
+					K2lift := ext< Q2 | glift>;
+					if IsIsomorphic(K2,K2lift) then
+						// Have isomorphic quadratics, so good
+						Append(~Lifts,fQ);
+					end if;
+				else
+					// Irreducible cubic
+					
+					K3 := ext< Q2 | f>;
+					K3lift := ext< Q2 | P2!fQ>;
+					if IsIsomorphic(K3,K3lift) then
+						// Have isomorphic extensions, so good
+						Append(~Lifts,fQ);
+					end if;
+				end if;
+			end if;
+		end if;
+	end for;
+	
+	// Check that we've found something
+	if #Lifts eq 0 then
+		print "Flawed assumptions!";
+	end if;
+	
+	Append(~CubicLiftsQ2,Lifts);
+end for;
+
+
+// Now, run through (quadratic,cubic) pairs and compute a global sextic lift.
+// Set up as a 2-dimensional array, to keep track of the pairs
+// Only computing one lift per pair
+
+SexticLiftsQ2 := [];
+for i in [1..#QuadAlgRepsQ2] do
+	Lifts := [];
+	for j in [1..#CubicAlgRepsQ2] do
+		found_lift := false;
+		for f in QuadLiftsQ2[i] do
+			K2 := NumberField(f);
+			for g in CubicLiftsQ2[j] do
+				if found_lift eq false then
+					K3 := NumberField(g);
+					K6 := Compositum(K2,K3);
+					if IsIsomorphic(GaloisGroup(K6), DihedralGroup(6)) then
+						found_lift := true;
+						f6 := DefiningPolynomial(K6);
+						Append(~Lifts,f6);
+					end if;
+				end if;
+			end for;
+		end for;
+		if found_lift eq false then
+			print "Failed to find a suitable sextic lift for the pair",i," ",j;
+		end if;
+	end for;
+	Append(~SexticLiftsQ2,Lifts);
+end for;
+
+// Now compute the degree 12 polynomial lift
+
+Deg12LiftsQ2 := [[ DefiningPolynomial(SplittingField(SexticLiftsQ2[i][j])): j in [1..#CubicAlgRepsQ2]] : i in [1..#QuadAlgRepsQ2]];
+
+// Find the 2-part of the discriminant of the degree 12 field
+
+DeltaValQ2 := [[ Valuation(Discriminant(Integers(NumberField(Deg12LiftsQ2[i][j]))),2) : j in [1..#CubicAlgRepsQ2]]: i in [1..#QuadAlgRepsQ2]];
+DeltaQ2 := [[ 2^DeltaValQ2[i][j] : j in [1..#CubicAlgRepsQ2]]: i in [1..#QuadAlgRepsQ2]];
+
+// Now compute the 2-adic part of the desired constant C3.
+
+ValsQ2 := SetToSequence(Set(&cat(DeltaValQ2)));
+WeightedValsQ2 := [];
+for v in ValsQ2 do
+	del := 0;
+	for i in [1..#QuadAlgRepsQ2] do
+		for j in [1..#CubicAlgRepsQ2] do
+			if DeltaValQ2[i][j] eq v then
+				del := del + Cubic_weights_Q2[j];
+			end if;
+		end for;
+	end for;
+	Append(~WeightedValsQ2,[v,del]);
+end for;
+
+C3_Q2_0 := &+[ w[2]/2^(Integers()!w[1] div 6) : w in WeightedValsQ2 | Integers()!w[1] mod 6 eq 0];
+C3_Q2_2 := &+[ w[2]/2^(Integers()!w[1] div 6) : w in WeightedValsQ2 | Integers()!w[1] mod 6 eq 2];
+C3_Q2_4 := &+[ w[2]/2^(Integers()!w[1] div 6) : w in WeightedValsQ2 | Integers()!w[1] mod 6 eq 4];
+
+print "2-adic part of C3:", C3_Q2_0, "+", C3_Q2_2, "*2^(-1/3) +", C3_Q2_4, "*2^(-2/3)";
+
+
+
+
+
+// **** Moving on to stuff for Loughran--Santens, plus tables if we want them ****
+
+// Let's now find the decomposition and inertia subgroups.
+
+DecompQ2 := [];
+InertiaQ2 := [];
+
+for i in [1..#QuadAlgRepsQ2] do
+	decs := [];
+	inerts := [];
+	for j in [1..#CubicAlgRepsQ2] do
+		K12 := NumberField(Deg12LiftsQ2[i][j]);
+		OK12 := Integers(K12);
+		p2 := Factorization(2*OK12)[1][1];
+		Append(~decs,DecompositionGroup(p2));
+		Append(~inerts,InertiaGroup(p2));
+	end for;
+	Append(~DecompQ2,decs);
+	Append(~InertiaQ2,inerts);
+end for;
+
+
+// Let's find representatives for the degree 12 etale algebras we see.
+
+// These will be expressible as powers of some Galois extension of Q2
+// So let's list all the Galois extensions of Q2, keeping track of decomposition and inertia
+// Notation is Fields_Decomp_Inertia_Q2
+// These are pulled from the LMFDB.  I am recording some extra data here too, to help distinguish the different algebras
+
+Fields_1_Q2 := [t];									
+
+Fields_C2_1_Q2 := [t^2+t+1]; 						
+Fields_C2_C2_Q2 := [
+	t^2+2*t+2, 										
+	t^2+2*t+6, 										
+	t^2+4*t+2, 										
+	t^2+4*t+10,										
+	t^2+2,											
+	t^2+10											
+];
+
+Fields_C3_1_Q2 := [
+	t^3+t+1											
+];
+
+Fields_V4_C2_Q2 := [
+	t^4+6*t^3+17*t^2+24*t+13,						
+	t^4+2*t^3+31*t^2+30*t+183,						
+	t^4+4*t^3+16*t^2+24*t+12						
+];
+// First will have discriminant valuation 12, second two 18
+// Second factors as a quadratic over Q2(\sqrt{2}), the third doesn't
+
+Fields_V4_V4_Q2 := [
+	t^4+2*t^2+4*t+10,								
+	t^4+2*t^2+4*t+2,								
+	t^4+6*t^2+4*t+14,								
+	t^4+6*t^2+4*t+6									
+];
+// All Eisenstein
+
+Fields_C6_1_Q2 := [
+	t^6+t^4+t^3+t+1									
+];
+
+Fields_C6_C2_Q2 := [
+	t^6+6*t^5+20*t^4+42*t^3+55*t^2+36*t+9,			
+	t^6+6*t^5+32*t^4+90*t^3+199*t^2+204*t+149,		
+	t^6+44*t^4+2*t^3+589*t^2-82*t+2367,				
+	t^6+12*t^5+86*t^4+352*t^3+892*t^2+1552*t+1384,	
+	t^6+12*t^5+68*t^4+226*t^3+457*t^2+514*t+243,	
+	t^6+32*t^4+2*t^3+301*t^2-58*t+811				
+];
+// First two have discriminant valuation 12.  First factors over Q2(i), second over Q2(sqrt(-5))
+// Last four have discriminant valuation 18.  Factor over Q2(sqrt(2)), Q2(sqrt(10)), Q2(sqrt(-2)), Q2(sqrt(-10)), respectively.
+
+
+Fields_S3_C3_Q2 := [
+	t^6+3*t^5+10*t^4+19*t^3+22*t^2+11*t+7			
+];
+// Only possible option for S3
+
+Fields_D6_C6_Q2 := [
+	t^12 + 10*t^11 + 47*t^10 + 144*t^9 + 330*t^8 + 578*t^7 + 785*t^6 + 830*t^5 + 530*t^4 - 64*t^3 - 189*t^2 - 30*t+25,
+	t^12 + 14*t^11 + 85*t^10 + 314*t^9 + 832*t^8 + 1646*t^7 + 2525*t^6 + 2970*t^5 + 2416*t^4 + 910*t^3 - 155*t^2 - 150*t + 25,
+	t^12 - 4*t^11 + 16*t^10 - 4*t^9 + 32*t^8 + 32*t^7 + 96*t^5 - 4*t^4 + 72*t^3 + 88*t^2 + 108
+];
+// First has discriminant valuation 16.
+// Second two have valuation 22.  Second splits over Q2(sqrt(2)), third over Q2(sqrt(-2))
+
+
+// Now, assign the degree 12 algebras to the (quadratic, cubic) pairs)
+
+Deg12AlgRepsQ2 := [[ P2!0 : j in [1..#CubicAlgRepsQ2]] : i in [1..#QuadAlgRepsQ2]];
+
+
+for i in [1..#QuadAlgRepsQ2] do
+	for j in [1..#CubicAlgRepsQ2] do
+		f := P2!Deg12LiftsQ2[i][j];
+		f1 := [Fac[1] : Fac in Factorization(f)][1];
+		
+		// Split
+		if #DecompQ2[i][j] eq 1 then
+			Deg12AlgRepsQ2[i][j] := Fields_1_Q2[1];
+		end if;
+		
+		// Quadratic
+		if #DecompQ2[i][j] eq 2 and #InertiaQ2[i][j] eq 1 then
+			Deg12AlgRepsQ2[i][j] := Fields_C2_1_Q2[1];			
+		end if;
+		if #DecompQ2[i][j] eq 2 and #InertiaQ2[i][j] eq 2 then
+			for g in Fields_C2_C2_Q2 do
+				if #Factorization(PolynomialRing(ext<Q2 | g>)!f1) eq 2 then
+					Deg12AlgRepsQ2[i][j] := g;
+				end if;
+			end for;			
+		end if;
+		
+		// Cubic
+		if #DecompQ2[i][j] eq 3 then
+			Deg12AlgRepsQ2[i][j] := Fields_C3_1_Q2[1];	
+		end if;
+		
+		// Quartic V4
+		if IsIsomorphic(DecompQ2[i][j], TransitiveGroup(4,2)) then
+			if #InertiaQ2[i][j] eq 2 then
+				if DeltaValQ2[i][j] eq 12 then
+					Deg12AlgRepsQ2[i][j] := Fields_V4_C2_Q2[1];
+				else
+					if #Factorization(PolynomialRing(ext<Q2 | t^2-2>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_V4_C2_Q2[2];
+					else
+						Deg12AlgRepsQ2[i][j] := Fields_V4_C2_Q2[3];
+					end if;
+				end if;
+			else
+				for g in Fields_V4_V4_Q2 do
+					if #Factorization(PolynomialRing(ext<Q2|g>)!f1) eq 4 then
+						Deg12AlgRepsQ2[i][j] := g;
+					end if;
+				end for;
+			end if;
+		end if;
+		
+		// Sextic C6
+		if IsIsomorphic(DecompQ2[i][j], CyclicGroup(6)) then
+			if #InertiaQ2[i][j] eq 1 then
+				Deg12AlgRepsQ2[i][j] := Fields_C6_1_Q2[1];
+			else
+				if DeltaValQ2[i][j] eq 12 then
+					if #Factorization(PolynomialRing(ext<Q2 | t^2+2*t+2>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_C6_C2_Q2[1];
+					elif #Factorization(PolynomialRing(ext<Q2 | t^2+2*t+6>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_C6_C2_Q2[2];
+					end if;
+				elif DeltaValQ2[i][j] eq 18 then
+					if #Factorization(PolynomialRing(ext<Q2 | t^2-2>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_C6_C2_Q2[3];
+					elif #Factorization(PolynomialRing(ext<Q2 | t^2-10>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_C6_C2_Q2[4];
+					elif #Factorization(PolynomialRing(ext<Q2 | t^2+2>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_C6_C2_Q2[5];
+					elif #Factorization(PolynomialRing(ext<Q2 | t^2+10>)!f1) eq 2 then
+						Deg12AlgRepsQ2[i][j] := Fields_C6_C2_Q2[6];
+					end if;
+				end if;
+			end if;
+		end if;
+		
+		// Sextic S3
+		if IsIsomorphic(DecompQ2[i][j], SymmetricGroup(3)) then
+			Deg12AlgRepsQ2[i][j] := Fields_S3_C3_Q2[1];
+		end if;
+		
+		// Dodecic D6
+		if IsIsomorphic(DecompQ2[i][j], DihedralGroup(6)) then
+			if DeltaValQ2[i][j] eq 16 then
+				Deg12AlgRepsQ2[i][j] := Fields_D6_C6_Q2[1];
+			elif DeltaValQ2[i][j] eq 22 then
+				if #Factorization(PolynomialRing(ext<Q2 | t^2-2>)!f1) eq 2 then
+					Deg12AlgRepsQ2[i][j] := Fields_D6_C6_Q2[2];
+				elif #Factorization(PolynomialRing(ext<Q2 | t^2+2>)!f1) eq 2 then
+					Deg12AlgRepsQ2[i][j] := Fields_D6_C6_Q2[3];
+				end if;
+			end if;
+		end if;
+	end for;
+end for;
+
+
+ActualDeg12RepsQ2 := &cat[ SetToSequence(Set([f : f in &cat(Deg12AlgRepsQ2) | Degree(f) eq d])) : d in [1,2,3,4,6,12]];
+SourceDeg12RepsQ2 := [];
+DecompDeg12Q2 := [];
+for f in ActualDeg12RepsQ2 do
+	srcs := [];
+	for i in [1..#QuadAlgRepsQ2] do
+		for j in [1..#CubicAlgRepsQ2] do
+			if Deg12AlgRepsQ2[i][j] eq f then
+				Append(~srcs,[i,j]);
+				if #srcs eq 1 then
+					Append(~DecompDeg12Q2,DecompQ2[i][j]);
+				end if;
+			end if;
+		end for;
+	end for;
+	Append(~SourceDeg12RepsQ2,srcs);
+end for;
+
+// Now compute the Loughran--Santens Euler factor
+LS_Q2_0 := 0;
+LS_Q2_2 := 0;
+LS_Q2_4 := 0;
+
+D6 := DihedralGroup(6);
+
+norm := 1/12;
+
+for i in [1..#ActualDeg12RepsQ2] do
+	src := SourceDeg12RepsQ2[i][1];
+	i0 := src[1];
+	j0 := src[2];
+	
+	v := DeltaValQ2[i0][j0];
+	Dp := DecompDeg12Q2[i];
+	NumSubgps := &+[h`length : h in Subgroups(D6) | IsIsomorphic(h`subgroup,Dp)];
+	if (v mod 6) eq 0 then
+		LS_Q2_0 := LS_Q2_0 + norm*1/2^(v div 6) * #AutomorphismGroup(Dp)*NumSubgps;
+	elif (v mod 6) eq 2 then
+		LS_Q2_2 := LS_Q2_2 + norm*1/2^(v div 6) * #AutomorphismGroup(Dp)*NumSubgps;
+	elif (v mod 6) eq 4 then
+		LS_Q2_4 := LS_Q2_4 + norm*1/2^(v div 6) * #AutomorphismGroup(Dp)*NumSubgps;
+	end if;
+end for;
+
+
+
+print "2-adic part of Loughran-Santens:",LS_Q2_0,"+",LS_Q2_2,"*2^(-1/3) +",LS_Q2_4,"*2^(-2/3)";
+
+print "Coefficient-by-coefficient ratios to C3:", [C3_Q2_0/LS_Q2_0, C3_Q2_2/LS_Q2_2, C3_Q2_4/LS_Q2_4];

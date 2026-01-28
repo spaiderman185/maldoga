@@ -1,0 +1,116 @@
+Magma V2.28-27    Sat Dec 13 2025 13:27:45 on socrates [Seed = 4104138074]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "general-G-all-classes.mag"
+Loading "checkholomorphy.mag"
+Calling Python
+Loading "temp_gen_G_all_classes_output.mag"
+
+Working with G= Permutation group G acting on a set of cardinality 22
+Order = 443520 = 2^7 * 3^2 * 5 * 7 * 11
+(1, 13)(2, 8)(3, 16)(4, 12)(6, 22)(7, 17)(9, 10)(11, 14)
+(1, 22, 3, 21)(2, 18, 4, 13)(5, 12)(6, 11, 7, 15)(8, 14, 20, 10)(17, 19)
+  For class of (3, 5)(6, 20)(8, 11)(9, 13)(10, 19)(12, 22)(14, 18)(16, 17)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 0, 3, 3, 0, 3, 0, 3, 3, 9, 9, 9 ]
+    Psi_+= [ 1, 5, 0, 0, 7, 6, 10, 5, 10, 1, 1, 10 ]
+    alpha(G,C)= 73/6160
+        = 0.0118506493506493506493506493506
+    eps_eff_Q= 0
+
+
+  For class of (1, 14, 16)(2, 10, 5)(3, 13, 7)(4, 15, 6)(8, 19, 9)(12, 22, 20)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 0, 0, 0, 1, 1, 2, 0, 3, 0, 0, 3 ]
+    Psi_+= [ 1, 3, 0, 0, 2, 1, 3, 3, 0, 1, 1, 1 ]
+    alpha(G,C)= 129/49280
+        = 0.00261769480519480519480519480520
+    eps_eff_Q= 0
+
+
+  For class of (1, 2)(3, 6, 10, 14)(5, 20, 19, 18)(8, 22, 17, 9)(11, 12, 16, 13)(15, 21)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 1, 0, 0, 0, 0, 3, 4, 3, 3, 3, 3 ]
+    Psi_+= [ 1, 2, 1, 1, 3, 3, 1, 2, 2, 3, 3, 4 ]
+    alpha(G,C)= 13/2376
+        = 0.00547138047138047138047138047138
+    eps_eff_Q= 0
+
+
+  For class of (1, 2)(3, 8, 5, 11)(6, 13, 20, 9)(10, 17, 19, 16)(12, 18, 22, 14)(15, 21)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 1, 0, 0, 2, 2, 1, 4, 3, 3, 3, 2 ]
+    Psi_+= [ 1, 2, 1, 1, 1, 1, 3, 2, 2, 3, 3, 3 ]
+    alpha(G,C)= 335/66528
+        = 0.00503547378547378547378547378547
+    eps_eff_Q= 0
+
+
+  For class of (1, 7, 20, 5, 13)(2, 12, 18, 6, 9)(3, 11, 8, 14, 22)(4, 10, 15, 16, 19)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 2, 0, 0, 1, 1, 2, 3, 1, 1, 1, 1 ]
+    Psi_+= [ 1, 3, 0, 0, 1, 0, 1, 3, 2, 1, 1, 1 ]
+    alpha(G,C)= 1/384
+        = 0.00260416666666666666666666666667
+    eps_eff_Q= 0
+
+
+  For class of (1, 2, 7)(3, 9, 22, 5, 13, 12)(4, 21, 15)(6, 8, 18, 20, 11, 14)(10, 19)(16, 17)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 2, 0, 0, 0, 0, 2, 3, 1, 1, 1, 2 ]
+    Psi_+= [ 1, 1, 0, 0, 1, 0, 3, 2, 2, 2, 2, 0 ]
+    alpha(G,C)= 11/3840
+        = 0.00286458333333333333333333333333
+    eps_eff_Q= 0
+
+
+  For class of (1, 8, 5, 12, 17, 11, 14)(2, 19, 18, 6, 7, 3, 15)(4, 16, 20, 9, 22, 13, 10)
+    Comprised of 2 conjugacy classes
+
+    Psi_-= [ 0, 1, 0, 1, 2, 2, 4, 4, 5, 4, 4, 7 ]
+    Psi_+= [ 1, 1, 0, 0, 1, 3, 4, 4, 5, 4, 4, 7 ]
+    alpha(G,C)= 2263/253440
+        = 0.00892913510101010101010101010101
+    eps_eff_Q= 0
+
+
+  For class of (1, 2)(3, 17, 12, 6, 18, 22, 16, 19)(4, 21, 15, 7)(5, 20, 8, 11, 14, 10, 9, 13)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 2, 1, 1, 0, 1, 2, 3, 2, 3, 3, 3 ]
+    Psi_+= [ 1, 1, 0, 0, 1, 0, 2, 3, 1, 3, 3, 4 ]
+    alpha(G,C)= 391/77616
+        = 0.00503762110904968047825190682334
+    eps_eff_Q= 0
+
+
+  For class of (1, 15, 11, 10, 7, 18, 3, 20, 22, 17, 13)(2, 8, 12, 16, 5, 6, 19, 4, 14, 9, 21)
+    Comprised of 2 conjugacy classes
+
+    Psi_-= [ 0, 2, 4, 4, 5, 9, 14, 19, 21, 26, 25, 35 ]
+    Psi_+= [ 1, 1, 5, 5, 5, 9, 14, 20, 21, 25, 25, 35 ]
+    alpha(G,C)= 7331/161280
+        = 0.0454551091269841269841269841270
+    eps_eff_Q= 0
+
+
+  Worst alpha: 7331/161280  =  0.0454551091269841269841269841270
+
+Total time: 0.990 seconds, Total memory usage: 32.09MB

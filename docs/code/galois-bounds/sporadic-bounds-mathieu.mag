@@ -1,0 +1,12 @@
+/* 
+This code verifies the claimed bound on Mathieu groups in Lemma 4.12.
+*/
+
+for T in ["M11","M12","M22","M22d2","M23","M24"] do
+	G := PermutationGroup(T);
+	n := Degree(G);
+	print "For type ",T," get a=",n*(n+2)/4/Sqrt(#G);
+	print "";
+end for;
+
+print "For type M12d2, get a=",24*14/4/Sqrt(#AtlasGroup("M12d2"));

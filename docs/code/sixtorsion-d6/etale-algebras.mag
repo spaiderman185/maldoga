@@ -1,0 +1,15 @@
+/*
+	Magma code related to the paper "Asymptotics for 6-torsion and D_6" extensions, by:
+		Peter Koymans, Robert J. Lemke Oliver, Efthymios Sofos, Frank Thorne.
+	
+	Magma code to compute data associated with the degree 12 etale algebras arising from Galois D6 fields, over Q2 and Q3.
+	This is just a hub file to load the various subfiles, each of which handles a different place.
+	We can then do whatever analysis we want on top of that.
+	
+	Code written by Robert Lemke Oliver
+*/
+
+load "etale-algebras-Q2.mag";
+load "etale-algebras-Q3.mag";
+
+quit;

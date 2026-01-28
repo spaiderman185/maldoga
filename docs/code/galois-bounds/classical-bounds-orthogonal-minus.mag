@@ -1,0 +1,42 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for minus orthogonal groups.
+*/
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+
+aOrthogonalMinus:=0;
+
+
+for m in [4..10] do
+	for q in [2..100] do
+		if IsPrimePower(q) eq true then
+			n := (q^(m)-1)*(q^(m-1)+1)/(q-1);
+			G := q^(m*(m-1))/GCD(4,q^m+1)*(q^m+1)*&*[q^(2*i)-1 : i in [1..m-1]];
+			w := 7*m+15;
+			easya := (w-1/2)*n/Sqrt(G);
+			//schmidt := n*(n+2)/4/Sqrt(G);
+			
+			//a,i:=Minimum([easya,schmidt]);
+					
+			a:=easya;		
+					
+			srcqm := labels[1];
+			
+			if a ge aOrthogonalMinus then
+				aOrthogonalMinus := a;
+				srcq:=q;
+				srcm:=2*m;
+				src:=srcqm;
+			end if;
+		end if;
+	end for;
+end for;
+
+print "Largest value for groups POmegaMinus(2m,q) with no graph automorphism:";
+print aOrthogonalMinus,srcm,srcq;
+print src;

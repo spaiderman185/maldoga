@@ -1,0 +1,101 @@
+Magma V2.25-6     Wed May 15 2024 14:26:59 on eratosthenes [Seed = 2629698584]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "sporadic-bounds.mag"
+Loading "sporadic-bounds-mathieu.mag"
+For type  M11  get a= 0.401710751384348409721867361377
+
+For type  M12  get a= 0.136237315228266519910330741430
+
+For type  M22  get a= 0.198206241793022970667710413516
+
+For type  M22d2  get a= 0.140152977645347024775185741351
+
+For type  M23  get a= 0.0450077529596743640751219258128
+
+For type  M24  get a= 0.00997007568602254296196995163478
+
+For type M12d2, get a= 0.192668658897113105981433906073
+Loading "sporadic-bounds-base.mag"
+For group  J2  get a= 1.86449881204194391565489142506
+
+For group  J2d2  get a= 1.31839975350912063681600564105
+
+For group  HS  get a= 0.307820299754315977173338142203
+
+For group  HSd2  get a= 0.217661821343152576355402098311
+
+For group  McL  get a= 0.188112405405415319383706642457
+
+For group  McLd2  get a= 0.133015557487482129994967948968
+
+For group  Co3  get a= 0.0107796117459987323477709306137
+
+For group  Co2  get a= 0.00972439334892503111420524699909
+
+For group  He  get a= 0.470045595149670393267757009126
+
+For group  Hed2  get a= 0.332372427797198487125260277841
+
+For group  Suz  get a= 0.0385895127973852559179446633727
+
+For group  Suzd2  get a= 0.0272869061817161716091859728604
+
+For group  F22  get a= 0.00895515949190453735817855519751
+
+For group  F22d2  get a= 0.00849448707764152851818528848624
+
+For group  Ru  get a= 0.154108815520110321855635787269
+
+For group  F23  get a= 0.000321056967200836521669056106800
+
+For group  Co1  get a= 0.000988071613914115228231062184279
+
+For group  HN  get a= 0.655424311831169314838219053040
+
+For group  ON  get a= 1.71797540854727540612912175559
+
+For group  F24  get a= 5.61622162189293049219702668527E-6
+
+For group  F24d2  get a= 3.97126839348700144704480630708E-6
+
+For group ONd2, get a= 2.42958412259101571638890875133
+
+For group  HNd2  get a= 0.463454975450346132485460292260
+
+For group  J4  get a= 0.176498129362007592170796333324
+
+For group  Ly  get a= 0.368908759466429460158934503890
+
+For group  B  get a= 3.05306689156109854342010959696E-6
+
+For group  M  get a= 1.02767498563313663811984200353E-6
+
+Loading "sporadic-bounds-J1-J3.mag"
+For group J1, get a= 2.94750242794990124339946102283
+
+For group J3, get a= 3.91392114714467999151200562026
+
+For group J3d2, get a= 2.76756018417543431077311456473
+
+Loading "sporadic-bounds-thompson.mag"
+The probability that the triple stabilizer is non-trivial is at most 
+419448082/207981421875
+The probability that the quadruple stabilizer is non-trivial is at most 
+2992265015279081/5090286441648234375000
+The overall probability a random Sigma does not work is at most 
+0.00806761763769999755970246894095
+For the Thompson group, we can take a= 2.13806299355786972162435933150
+
+Total time: 3.100 seconds, Total memory usage: 32.09MB

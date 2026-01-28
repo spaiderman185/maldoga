@@ -1,0 +1,45 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for unitary groups of even dimension at least 6.
+*/
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+
+aUnitaryEven:=0;
+
+
+for m0 in [3..10] do
+	m:=2*m0;
+	for q in [2..1000] do
+		if IsPrimePower(q) then
+			n := Integers()!( (q^m-1)*(q^(m-1)+1)/(q^2-1) );
+			G := 1/GCD(m,q+1)*q^(1/2*m*(m-1))*&*[q^(i+1)-(-1)^(i+1) : i in [1..m-1]];;
+			w := (7*m+18)/2;
+			
+			easya := (w-1/2)*n/Sqrt(G);
+			schmidt := n*(n+2)/4/Sqrt(G);
+			
+			
+			
+			a,i:=Minimum([easya,schmidt]);
+			
+			srcqm := labels[i];
+			
+			
+			if a ge aUnitaryEven then
+				aUnitaryEven := a;
+				srcq:=q;
+				srcm:=m;
+				src:=srcqm;
+			end if;
+		end if;
+	end for;
+end for;
+
+print "Largest value for unitary groups PSU(2m,q):";
+print aUnitaryEven,srcm,srcq;
+print src;

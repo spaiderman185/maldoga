@@ -1,0 +1,96 @@
+Magma V2.28-27    Sat Dec 13 2025 13:23:02 on socrates [Seed = 207145606]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "general-G-all-classes.mag"
+Loading "checkholomorphy.mag"
+Calling Python
+Loading "temp_gen_G_all_classes_output.mag"
+
+Working with G= Permutation group G acting on a set of cardinality 11
+Order = 7920 = 2^4 * 3^2 * 5 * 11
+(2, 10)(4, 11)(5, 7)(8, 9)
+(1, 4, 3, 8)(2, 5, 6, 9)
+  For class of (1, 9)(2, 5)(3, 6)(4, 7)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 0, 2, 2, 0, 0, 0, 0, 4, 2 ]
+    Psi_+= [ 1, 2, 0, 0, 3, 0, 0, 4, 1, 1 ]
+    alpha(G,C)= 1/45
+        = 0.0222222222222222222222222222222
+    eps_eff_Q= 0
+
+
+  For class of (1, 3, 2)(4, 10, 7)(5, 6, 9)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 1, 0, 0, 1, 2, 2, 5, 3, 4 ]
+    Psi_+= [ 1, 2, 1, 1, 3, 0, 0, 4, 3, 5 ]
+    alpha(G,C)= 37/880
+        = 0.0420454545454545454545454545455
+    eps_eff_Q= 0
+
+
+  For class of (1, 4, 9, 2)(3, 6, 11, 10)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ]
+    Psi_+= [ 1, 2, 0, 0, 0, 0, 0, 0, 1, 0 ]
+    alpha(G,C)= 5/1188
+        = 0.00420875420875420875420875420876
+    eps_eff_Q= 0
+
+
+  For class of (1, 11, 10, 3, 4)(2, 7, 5, 9, 6)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 0, 0, 0, 0, 0, 0, 1, 1, 1 ]
+    Psi_+= [ 1, 0, 0, 0, 1, 1, 1, 0, 1, 1 ]
+    alpha(G,C)= 29/3168
+        = 0.00915404040404040404040404040404
+    eps_eff_Q= 0
+
+
+  For class of (1, 6, 5)(2, 11, 7, 8, 10, 3)(4, 9)
+    Comprised of 1 conjugacy classes
+
+    Psi_-= [ 0, 2, 0, 0, 0, 0, 0, 0, 2, 2 ]
+    Psi_+= [ 1, 1, 1, 1, 0, 0, 0, 1, 2, 1 ]
+    alpha(G,C)= 7/495
+        = 0.0141414141414141414141414141414
+    eps_eff_Q= 0
+
+
+  For class of (1, 5, 11, 6, 2, 10, 3, 7)(4, 9)
+    Comprised of 2 conjugacy classes
+
+    Psi_-= [ 0, 1, 0, 0, 1, 0, 0, 0, 1, 0 ]
+    Psi_+= [ 1, 1, 0, 0, 0, 0, 0, 0, 0, 1 ]
+    alpha(G,C)= 29/6930
+        = 0.00418470418470418470418470418470
+    eps_eff_Q= 0
+
+
+  For class of (1, 6, 2, 8, 11, 3, 10, 9, 7, 5, 4)
+    Comprised of 2 conjugacy classes
+
+    Psi_-= [ 0, 1, 1, 1, 1, 2, 1, 4, 4, 5 ]
+    Psi_+= [ 1, 0, 0, 0, 1, 1, 1, 4, 5, 5 ]
+    alpha(G,C)= 131/2880
+        = 0.0454861111111111111111111111111
+    eps_eff_Q= 0
+
+
+  Worst alpha: 131/2880  =  0.0454861111111111111111111111111
+
+Total time: 0.360 seconds, Total memory usage: 32.09MB

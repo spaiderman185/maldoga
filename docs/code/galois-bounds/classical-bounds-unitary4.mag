@@ -1,0 +1,102 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for unitary groups of dimension 4.
+*/
+
+//load "find-invariants.mag";
+
+labels:=["Easy invariants", "Schmidt"];
+
+
+aUnitary4:=0;
+src:="";
+srcq:=0;
+srcm:=0;
+
+m:=4;
+
+for q in [2..1000] do
+	if IsPrimePower(q) then
+		n := Integers()!((q^3+1)*(q+1));
+		G := 1/GCD(m,q+1)*q^(1/2*m*(m-1))*&*[q^(i+1)-(-1)^(i+1) : i in [1..m-1]];;
+		w := 25;
+		
+		easya := (w-1/2)*n/Sqrt(G);
+		schmidt := n*(n+2)/4/Sqrt(G);
+		
+		a,i:=Minimum([easya,schmidt]);
+		
+		srcqm := labels[i];
+		
+		if (q eq 2) then
+			T0 := PSU(4,2);
+			T := CosetImage(T0,MaximalSubgroups(T0 : IndexEqual:=n)[1]`subgroup);
+			MinInvsT := FindMinimalInvariants(T);
+			GammaU:=Normalizer(SymmetricGroup(Integers()!n),T);
+			MinInvsG := FindMinimalInvariants(GammaU);
+			bdT := (&+MinInvsT - n/2)/Sqrt(G);
+			bdG := (&+MinInvsG - n/2)/Sqrt(2*G);
+			
+			mininvbd,i := Maximum([bdT,bdG]);
+			if mininvbd lt a then
+				a := mininvbd;
+				srcqm := ["PSU(4," cat Sprint(q) cat ") invariants; " cat Sprint(Multiset(MinInvsT)), "PGammaU(4," cat Sprint(q) cat ") invariants; " cat Sprint(Multiset(MinInvsG))][i];
+			end if;
+		end if;
+		
+		if q eq 3 then
+			T0 := PSU(4,3);
+			T := CosetImage(T0,MaximalSubgroups(T0 : IndexEqual:=112)[1]`subgroup);
+			Gamma := Normalizer(SymmetricGroup(Integers()!n),T);
+			irrel,i := Minimum([#Stabilizer(Gamma,[1,i]) : i in [1..n]]);
+			stabT := Minimum(&cat[[#Stabilizer(T,[1,i,j,k]) : k in [j+1..n]] : j in [2..n-1]]);
+				
+			bettera1:=100;	
+			if stabT eq 1 then
+				bettera1 := (15*(n-14)+14*15/2-n/2)/Sqrt(G);
+			else
+				print "The base computation for PSU(4,3) failed.";
+			end if;
+			
+			irrel,i1 := Minimum([#Stabilizer(Gamma,[1,i]) : i in [1..n]]);
+			irrel,i2 := Minimum([#Stabilizer(Gamma,[1,i1,i]) : i in [1..n]]);
+			stabGamma := Minimum(&cat[[#Stabilizer(Gamma,[1,i1,i2,j,k]) : k in [j+1..n]] : j in [2..n-1]]);
+				
+			bettera2:=100;	
+			if stabGamma eq 1 then
+				bettera2 := (21*(n-20)+20*21/2-n/2)/Sqrt(2*G);
+			else
+				print "The base computation for Aut(PSU(4,3)) failed.";
+			end if;
+			
+			if bettera1 ge bettera2 then
+				if bettera1 lt a then
+					a := bettera1;
+					srcqm := "Base of size 4 for PSU(4,3).";
+				end if;
+			else
+				if bettera2 lt a then
+					a := bettera2;
+					srcqm := "Base of size 5 for PGammaU(4,3)";
+				end if;
+			end if;
+			
+			if stabT ne 1 or stabGamma ne 1 then
+				print "Claim about bases failed.  Try rerunning.";
+			end if;
+			
+		end if;
+		
+		if a ge aUnitary4 then
+			aUnitary4 := a;
+			srcq:=q;
+			srcm:=m;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+
+print "Largest value for unitary groups PSU(4,q):";
+print aUnitary4,srcm,srcq;
+print src;

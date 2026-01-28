@@ -1,0 +1,173 @@
+/* 
+	Code designed to compute Linnik exponents for all rational classes inside a group G.
+	Due to some Magma -> Python -> Magma layers, this code is not as streamlined as I would have liked.
+	In particular, you will have to set the desired group G by editing this file.
+	Sorry.
+	Besides Magma, you will also need a Python environment with scipy version 1.09+ installed.
+	
+	The target group G is set right away, on the first line of code.
+	
+	Code by Robert J. Lemke Oliver
+	lemkeoliver@wisc.edu
+*/
+
+G := PermutationGroup("M24");
+
+Cycs := [c`subgroup : c in CyclicSubgroups(G) | Order(c`subgroup) gt 1];
+RationalClassReps:= [ c.1 : c in Cycs];
+
+// Magma sometimes does silly things with generating sets for cyclic groups.  Make sure we're actually good.
+
+for i in [1..#Cycs] do
+	while sub< Cycs[i] | RationalClassReps[i]> ne Cycs[i] do
+		RationalClassReps[i] :=Random(Cycs[i]);
+	end while;
+end for;
+
+ConjugacyClassesPer := [EulerPhi(#c)/Index(Normalizer(G,c),Centralizer(G,c)) : c in Cycs];
+
+CT := CharacterTable(G);
+
+deltag := [];
+
+for i in [1..#Cycs] do
+	g := RationalClassReps[i];
+	n := Order(g);
+	C := sub< G | g>;
+	xi := [chi : chi in CharacterTable(C) | Order(chi) eq n][1];
+	phig := &*[1 - xi^(n div p) : p in PrimeFactors(n)];
+	Deltag := Induction(phig, G);
+	Append(~deltag, [InnerProduct(Deltag,chi) : chi in CT]);
+end for;
+
+load "checkholomorphy.mag";
+
+SetAutoColumns(false);
+SetColumns(0);
+
+prefix := "temp_gen_G_all_classes";
+suffix := ".py";
+preamble := "import numpy as np\nfrom scipy.optimize import LinearConstraint\nfrom scipy.optimize import milp\nfrom scipy.optimize import linprog\n";
+useful_funcs := "def InCone(cone_vecs,vec):
+	n = len(cone_vecs)
+	c = np.ones(n)
+	Aeq = np.transpose(cone_vecs)
+	beq = vec
+	res = linprog(c=c,A_eq=Aeq,b_eq=beq)
+	return res.success
+	
+def FindConeBasis(vecs):
+	current = vecs
+	ind = 0
+	while ind < len(current):
+		candidate = np.array([])
+		current_vec = current[ind]
+		if ind == 0:
+			candidate = current[range(1,len(current))]
+		if ind == len(current)-1:
+			candidate = current[range(0,len(current)-1)]
+		if ind>0 and ind < len(current)-1:
+			candidate = np.concatenate((current[range(0,ind)],current[range(ind+1,len(current))]))
+		if InCone(candidate,current_vec):
+			current = candidate
+		else:
+			ind=ind+1
+	return current\n";
+
+mons := FindMonomialCharacters(G);
+
+res := [[] : i in [1..#Cycs]];
+
+file := prefix cat suffix;
+PrintFile(file, preamble cat useful_funcs : Overwrite:=true);
+
+N := #CT;
+
+magmafile := "temp_gen_G_all_classes_output.mag";
+
+py_write_str_new := "with open(\"" cat magmafile cat "\", \"w\") as f:\n    f.write(\"";
+py_write_str := "with open(\"" cat magmafile cat "\", \"a\") as f:\n    f.write(\"";
+py_write_str_close := "\\n\")\n";
+PrintFile(file, py_write_str_new cat py_write_str_close);
+
+PrintFile(file, "mons=np.array(" cat Sprint(mons) cat ")");
+PrintFile(file, "basis=FindConeBasis(mons)");
+
+PrintFile(file, "N=" cat Sprint(N));
+PrintFile(file, "M=len(basis)");
+
+PrintFile(file, "c=np.concatenate((np.array(" cat Sprint([Integers()!chi(1) : chi in CT]) cat "),np.zeros(2*M)))");
+PrintFile(file, "integrality=np.concatenate((np.ones(N),np.zeros(2*M)))");
+
+PrintFile(file, "Aa=np.transpose(np.concatenate((-np.identity(N),basis,np.zeros_like(basis))))");
+PrintFile(file, "Ab=np.transpose(np.concatenate((-np.identity(N),np.zeros_like(basis),basis)))");
+PrintFile(file,"A=np.concatenate((Aa,Ab,[np.zeros(N+2*M)]))");
+PrintFile(file,"A[2*N][0]=1");
+
+resn := "res";
+	
+PrintFile(file, py_write_str cat resn cat ":=[[0 : j in [1..N]] : i in [1..N]];" cat py_write_str_close);
+
+for i in [1..#Cycs] do
+	g := RationalClassReps[i];
+	targetg := [0 : i in [1..N]] cat deltag[i] cat [0];
+	target_str := "target" cat Sprint(i);
+	res_str := "res" cat Sprint(i);
+	constraint_str := "constraint" cat Sprint(i);
+	PrintFile(file, target_str cat "=np.array(" cat Sprint(targetg) cat ")");
+	PrintFile(file, constraint_str cat "=LinearConstraint(A," cat target_str cat "," cat target_str cat ")");
+	PrintFile(file, res_str cat "=milp(c=c,constraints=" cat constraint_str cat ", integrality=integrality)");
+	
+	PrintFile(file, py_write_str cat resn cat "[" cat Sprint(i) cat "]:=\" + np.array2string(np.round(" cat res_str cat ".x[range(0,N)]),separator=', ') + \";\")\n");
+end for;
+
+print "Calling Python";
+
+System("python3 " cat file);
+
+load "temp_gen_G_all_classes_output.mag";
+
+output_file := "gen_G_all_classses_output_latex.txt";
+PrintFile(output_file, "" : Overwrite:=true);
+
+print "";
+print "Working with G=",G;
+
+alpha_max := 0;
+
+quad_chars := [chi : chi in CT | chi(1) eq 1 and Order(chi) eq 2];
+
+for i in [1..#Cycs] do
+	g := RationalClassReps[i];
+	psim := res[i];
+	psip := [psim[j] + deltag[i][j] : j in [1..#CT]];
+	print "  For class of",g;
+	print "    Comprised of",ConjugacyClassesPer[i],"conjugacy classes";
+	print "";
+	print "    Psi_-=",psim;
+	print "    Psi_+=",psip;
+	
+	Psim := &+[Integers()!psim[i]*CT[i] : i in [1..#CT]];
+	Psip := &+[Integers()!psip[i]*CT[i] : i in [1..#CT]];
+	
+	alpha := 1/2* Maximum([ (Psim(1) - 1/#I*&+[Psim(a) : a in I])/#G/(1-1/#I): I in Cycs | #I ne 1]);
+	if #quad_chars gt 0 then
+		eps_eff_Q := Maximum([InnerProduct(Psip,chi) : chi in quad_chars])*2/#G;
+	else
+		eps_eff_Q := 0;
+	end if;
+	print "    alpha(G,C)=",alpha;
+	print "        =",Rationals()!alpha*1.0;
+	print "    eps_eff_Q=",eps_eff_Q;
+	print "";
+	print "";
+	
+	PrintFile(output_file, "& $[" cat Sprint(g) cat "]$ & $" cat Sprint(Rationals()!alpha) cat "$ & $" cat Sprint(Rationals()!eps_eff_Q) cat "$ \\\\");
+	
+	alpha_max := Maximum(Rationals()!alpha,alpha_max);
+	
+end for;
+
+print "  Worst alpha:",alpha_max," = ",alpha_max*1.0;
+
+quit;

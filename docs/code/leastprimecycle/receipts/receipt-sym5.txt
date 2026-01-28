@@ -1,0 +1,67 @@
+Checking for NVIDIA GPU ... none
+Checking for Magma license
+Starting AVX2 version of Magma
+Magma V2.28-11    Thu Oct 23 2025 16:02:24 on edmonton [Seed = 1710722417]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "sym-5-computations.mag"
+Loading "checkholomorphy.mag"
+Loading "temp_5_output.mag"
+
+Working with G=S_ 5
+  For class (1, 2)
+    Psi_-= [ 0, 1, 2, 0, 0, 1, 1 ]
+    Psi_+= [ 1, 0, 0, 2, 1, 0, 1 ]
+    alpha(G,C)= 13/120
+        = 0.108333333333333333333333333333
+    eps_eff_Q= 0
+
+  For class (1, 2)(3, 4)
+    Psi_-= [ 0, 0, 0, 0, 0, 0, 2 ]
+    Psi_+= [ 1, 1, 0, 0, 1, 1, 0 ]
+    alpha(G,C)= 1/15
+        = 0.0666666666666666666666666666667
+    eps_eff_Q= 1/60
+
+  For class (1, 2, 3)
+    Psi_-= [ 0, 0, 0, 0, 1, 1, 0 ]
+    Psi_+= [ 1, 1, 1, 1, 0, 0, 0 ]
+    alpha(G,C)= 1/20
+        = 0.0500000000000000000000000000000
+    eps_eff_Q= 1/60
+
+  For class (1, 2, 3, 4)
+    Psi_-= [ 0, 1, 0, 0, 1, 0, 0 ]
+    Psi_+= [ 1, 0, 0, 0, 0, 1, 0 ]
+    alpha(G,C)= 1/36
+        = 0.0277777777777777777777777777778
+    eps_eff_Q= 0
+
+  For class (1, 2, 3, 4, 5)
+    Psi_-= [ 0, 1, 1, 1, 0, 0, 1 ]
+    Psi_+= [ 1, 2, 0, 0, 0, 0, 2 ]
+    alpha(G,C)= 1/15
+        = 0.0666666666666666666666666666667
+    eps_eff_Q= 1/30
+
+  For class (1, 2, 3)(4, 5)
+    Psi_-= [ 0, 3, 1, 1, 0, 1, 1 ]
+    Psi_+= [ 1, 2, 2, 0, 1, 0, 1 ]
+    alpha(G,C)= 13/120
+        = 0.108333333333333333333333333333
+    eps_eff_Q= 1/30
+
+  Worst alpha: 13/120  =  0.108333333333333333333333333333
+
+Total time: 0.950 seconds, Total memory usage: 32.09MB
