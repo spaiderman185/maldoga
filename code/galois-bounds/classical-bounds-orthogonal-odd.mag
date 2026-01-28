@@ -1,0 +1,40 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for odd orthogonal groups.
+*/
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+
+aOrthogonalOdd:=0;
+
+
+for m in [3..10] do
+	for q in [3..100] do
+		if IsPrimePower(q) eq true and Factorization(q)[1][1] ne 2 then
+			n := (q^(2*m)-1)/(q-1);
+			G := q^(m^2)/GCD(2,q-1)*&*[q^(2*i)-1 : i in [1..m]];
+			w := 7*m+16;
+			easya := (w-1/2)*n/Sqrt(G);
+			schmidt := n*(n+2)/4/Sqrt(G);
+			
+			a,i:=Minimum([easya,schmidt]);
+			
+			srcqm := labels[i];
+			
+			if a ge aOrthogonalOdd then
+				aOrthogonalOdd := a;
+				srcq:=q;
+				srcm:=2*m+1;
+				src:=srcqm;
+			end if;
+		end if;
+	end for;
+end for;
+
+print "Largest value for unitary groups POmega(2m+1,q):";
+print aOrthogonalOdd,srcm,srcq;
+print src;

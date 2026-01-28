@@ -1,0 +1,73 @@
+Magma V2.27-4     Wed May 15 2024 13:18:39 on socrates [Seed = 3387646760]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "exceptional-bounds.mag"
+Loading "find-invariants.mag"
+Biggest a for type G2
+1.67822637286314512350924167912 3
+Base of size 3.
+
+Biggest a for type G2 with aut
+2.37337049723526655412459080202 3
+Base of size 3.
+
+Biggest a for type F4
+0.0248009773209659312511023900053 2
+Easy invariants.
+
+Biggest a for type F4 with aut
+0.0350738784874175687591639867902 2
+Easy invariants.
+
+Biggest a for type E6
+8.27669738555080381841566848648E-6 2
+Easy invariants.
+
+Biggest a for type E6 with aut
+1.17050176943038844149837103516E-5 2
+Easy invariants.
+
+Biggest a for type E7
+6.35773063049444657012443394076E-11 2
+Easy invariants.
+
+Biggest a for type E8
+2.31226805730865332201167075191E-19 2
+Easy invariants.
+
+Biggest a for type 2E6
+0.000207980583804932020320704205930 2
+Easy invariants.
+
+Biggest a for type 3D4
+0.816882710847310074222323568411 2
+Easy invariants.
+
+Biggest a for type 2B2
+1.70708329601583598958149326965 32
+Easy invariants.
+
+Biggest a for type 2F4
+0.0223398211355826034755689151527 8
+Easy invariants.
+
+Biggest a for type 2G2
+1.86315061093820048467877927230 27
+Easy invariants.
+
+Biggest a for Tits
+1.87191341759467491228579222916
+
+
+Total time: 135.680 seconds, Total memory usage: 2540.69MB

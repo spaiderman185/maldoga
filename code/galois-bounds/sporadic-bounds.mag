@@ -1,0 +1,10 @@
+/* 
+This code verifies the claims of Lemmas 4.12--4.16 on sporadic groups.
+*/
+
+load "sporadic-bounds-mathieu.mag";
+load "sporadic-bounds-base.mag";
+load "sporadic-bounds-J1-J3.mag";
+load "sporadic-bounds-thompson.mag";
+
+quit;

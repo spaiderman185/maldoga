@@ -1,0 +1,803 @@
+> time VerifyThroughOrder(100000000);
+There are 181 possible socle types of order <= 100000000
+Working with socle 1 of 181
+  Socle type true [* <17, 5, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 2 of 181
+  Socle type true [* <17, 5, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 3 of 181
+  Socle type true [* <17, 5, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 4 of 181
+  Socle type true [* <17, 5, 0> *] ^ 4
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 5 of 181
+  Socle type true [* <"A", 1, 7> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 6 of 181
+  Socle type true [* <"A", 1, 7> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 7 of 181
+  Socle type true [* <"A", 1, 7> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 8 of 181
+  Socle type true [* <17, 6, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 9 of 181
+  Socle type true [* <17, 6, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 10 of 181
+  Socle type true [* <17, 6, 0> *] ^ 3
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 3 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 3
+    Working with cyclic image 2 of 3
+    Working with cyclic image 3 of 3
+Working with socle 11 of 181
+  Socle type true [* <"A", 1, 8> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 12 of 181
+  Socle type true [* <"A", 1, 8> *] ^ 2
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 13 of 181
+  Socle type true [* <"A", 1, 11>, <17, 11, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 14 of 181
+  Socle type true [* <"A", 1, 11>, <17, 11, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 15 of 181
+  Socle type true [* <"A", 1, 13>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 16 of 181
+  Socle type true [* <"A", 1, 13>, <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 17 of 181
+  Socle type true [* <"A", 1, 17>, <17, 17, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 18 of 181
+  Socle type true [* <"A", 1, 17>, <17, 17, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 19 of 181
+  Socle type true [* <17, 7, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 20 of 181
+  Socle type true [* <17, 7, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 21 of 181
+  Socle type true [* <"A", 1, 19>, <17, 19, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 22 of 181
+  Socle type true [* <"A", 1, 19>, <17, 19, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 23 of 181
+  Socle type true [* <"A", 1, 16>, <17, 17, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 24 of 181
+  Socle type true [* <"A", 1, 16>, <17, 17, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 25 of 181
+  Socle type true [* <"A", 2, 3>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 26 of 181
+  Socle type true [* <"A", 2, 3>, <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 27 of 181
+  Socle type true [* <"2A", 2, 3>, <17, 8, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 28 of 181
+  Socle type true [* <"2A", 2, 3>, <17, 8, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 29 of 181
+  Socle type true [* <"A", 1, 23>, <17, 23, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 30 of 181
+  Socle type true [* <"A", 1, 23>, <17, 23, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 31 of 181
+  Socle type true [* <"A", 1, 25>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 32 of 181
+  Socle type true [* <"A", 1, 25>, <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 33 of 181
+  Socle type true [* <17, 11, 0>, <18, 1, "M11"> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 34 of 181
+  Socle type true [* <17, 11, 0>, <18, 1, "M11"> *] ^ 2
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 35 of 181
+  Socle type true [* <"A", 1, 27>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 36 of 181
+  Socle type true [* <"A", 1, 27>, <17, 13, 0> *] ^ 2
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 9 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 9
+    Working with cyclic image 2 of 9
+    Working with cyclic image 3 of 9
+    Working with cyclic image 4 of 9
+    Working with cyclic image 5 of 9
+    Working with cyclic image 6 of 9
+    Working with cyclic image 7 of 9
+    Working with cyclic image 8 of 9
+    Working with cyclic image 9 of 9
+Working with socle 37 of 181
+  Socle type true [* <"A", 1, 29>, <17, 29, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 38 of 181
+  Socle type true [* <"A", 1, 31>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 39 of 181
+  Socle type true [* <17, 8, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 40 of 181
+  Socle type true [* <"A", 2, 4> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 41 of 181
+  Socle type true [* <"A", 1, 37>, <17, 37, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 42 of 181
+  Socle type true [* <"C", 2, 3> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 43 of 181
+  Socle type true [* <"2B", 2, 8>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 44 of 181
+  Socle type true [* <"A", 1, 32>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 45 of 181
+  Socle type true [* <"A", 1, 41>, <17, 41, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 46 of 181
+  Socle type true [* <"A", 1, 43>, <17, 43, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 47 of 181
+  Socle type true [* <"A", 1, 47>, <17, 47, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 48 of 181
+  Socle type true [* <"A", 1, 49>, <17, 25, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 49 of 181
+  Socle type true [* <"2A", 2, 4>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 50 of 181
+  Socle type true [* <"A", 1, 53>, <17, 53, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 51 of 181
+  Socle type true [* <17, 11, 0>, <18, 2, "M12"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 52 of 181
+  Socle type true [* <"A", 1, 59>, <17, 59, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 53 of 181
+  Socle type true [* <"A", 1, 61>, <17, 61, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 54 of 181
+  Socle type true [* <"2A", 2, 5>, <17, 8, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 55 of 181
+  Socle type true [* <"A", 1, 67>, <17, 67, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 56 of 181
+  Socle type true [* <17, 19, 0>, <18, 6, "J1"> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 57 of 181
+  Socle type true [* <"A", 1, 71>, <17, 71, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 58 of 181
+  Socle type true [* <17, 9, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 59 of 181
+  Socle type true [* <"A", 1, 73>, <17, 73, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 60 of 181
+  Socle type true [* <"A", 1, 79>, <17, 79, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 61 of 181
+  Socle type true [* <"A", 1, 64>, <17, 18, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 62 of 181
+  Socle type true [* <"A", 1, 81>, <17, 41, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 63 of 181
+  Socle type true [* <"A", 1, 83>, <17, 83, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 64 of 181
+  Socle type true [* <"A", 1, 89>, <17, 89, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 65 of 181
+  Socle type true [* <"A", 2, 5>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 66 of 181
+  Socle type true [* <17, 11, 0>, <18, 3, "M22"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 67 of 181
+  Socle type true [* <"A", 1, 97>, <17, 97, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 68 of 181
+  Socle type true [* <"A", 1, 101>, <17, 101, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 69 of 181
+  Socle type true [* <"A", 1, 103>, <17, 103, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 70 of 181
+  Socle type true [* <17, 8, 0>, <18, 8, "J2"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 71 of 181
+  Socle type true [* <"A", 1, 107>, <17, 107, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 72 of 181
+  Socle type true [* <"A", 1, 109>, <17, 109, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 73 of 181
+  Socle type true [* <"A", 1, 113>, <17, 113, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 74 of 181
+  Socle type true [* <"A", 1, 121>, <17, 61, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 75 of 181
+  Socle type true [* <"A", 1, 125>, <17, 33, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 76 of 181
+  Socle type true [* <"C", 2, 4>, <17, 17, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 77 of 181
+  Socle type true [* <"A", 1, 127>, <17, 127, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 78 of 181
+  Socle type true [* <"A", 1, 131>, <17, 131, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 79 of 181
+  Socle type true [* <"A", 1, 137>, <17, 137, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 80 of 181
+  Socle type true [* <"A", 1, 139>, <17, 139, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 81 of 181
+  Socle type true [* <"C", 3, 2>, <17, 10, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 82 of 181
+  Socle type true [* <"A", 1, 149>, <17, 149, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 83 of 181
+  Socle type true [* <"A", 1, 151>, <17, 151, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 84 of 181
+  Socle type true [* <17, 10, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 85 of 181
+  Socle type true [* <"A", 2, 7>, <17, 19, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 86 of 181
+  Socle type true [* <"A", 1, 157>, <17, 157, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 87 of 181
+  Socle type true [* <"A", 1, 128>, <17, 127, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 88 of 181
+  Socle type true [* <"A", 1, 163>, <17, 163, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 89 of 181
+  Socle type true [* <"A", 1, 167>, <17, 167, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 90 of 181
+  Socle type true [* <"A", 1, 169>, <17, 22, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 91 of 181
+  Socle type true [* <"A", 1, 173>, <17, 173, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 92 of 181
+  Socle type true [* <"A", 1, 179>, <17, 179, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 93 of 181
+  Socle type true [* <"A", 1, 181>, <17, 181, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 94 of 181
+  Socle type true [* <"2A", 3, 3>, <17, 10, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 95 of 181
+  Socle type true [* <"A", 1, 191>, <17, 191, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 96 of 181
+  Socle type true [* <"A", 1, 193>, <17, 193, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 97 of 181
+  Socle type true [* <"A", 1, 197>, <17, 197, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 98 of 181
+  Socle type true [* <"A", 1, 199>, <17, 199, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 99 of 181
+  Socle type true [* <"G", 2, 3>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 100 of 181
+  Socle type true [* <"C", 2, 5>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 101 of 181
+  Socle type true [* <"A", 1, 211>, <17, 57, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 102 of 181
+  Socle type true [* <"2A", 2, 8>, <17, 19, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 103 of 181
+  Socle type true [* <"A", 1, 223>, <17, 223, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 104 of 181
+  Socle type true [* <"2A", 2, 7>, <17, 43, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 105 of 181
+  Socle type true [* <"A", 1, 227>, <17, 227, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 106 of 181
+  Socle type true [* <"A", 1, 229>, <17, 229, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 107 of 181
+  Socle type true [* <"A", 3, 3>, <17, 13, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 108 of 181
+  Socle type true [* <"A", 1, 233>, <17, 233, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 109 of 181
+  Socle type true [* <"A", 1, 239>, <17, 239, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 110 of 181
+  Socle type true [* <"A", 1, 241>, <17, 241, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 111 of 181
+  Socle type true [* <"A", 1, 243>, <17, 121, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 112 of 181
+  Socle type true [* <"A", 1, 251>, <17, 251, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 113 of 181
+  Socle type true [* <"A", 1, 257>, <17, 257, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 114 of 181
+  Socle type true [* <"A", 1, 263>, <17, 263, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 115 of 181
+  Socle type true [* <"A", 1, 269>, <17, 269, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 116 of 181
+  Socle type true [* <"A", 1, 271>, <17, 271, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 117 of 181
+  Socle type true [* <"A", 4, 2>, <17, 31, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 118 of 181
+  Socle type true [* <17, 23, 0>, <18, 4, "M23"> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 119 of 181
+  Socle type true [* <"A", 1, 277>, <17, 277, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 120 of 181
+  Socle type true [* <"A", 1, 281>, <17, 281, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 121 of 181
+  Socle type true [* <"A", 1, 283>, <17, 283, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 122 of 181
+  Socle type true [* <"A", 1, 289>, <17, 34, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 123 of 181
+  Socle type true [* <"A", 1, 293>, <17, 77, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 124 of 181
+  Socle type true [* <"2A", 4, 2>, <17, 11, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 125 of 181
+  Socle type true [* <"A", 1, 307>, <17, 26, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 126 of 181
+  Socle type true [* <"A", 1, 311>, <17, 311, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 127 of 181
+  Socle type true [* <"A", 1, 313>, <17, 313, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 128 of 181
+  Socle type true [* <"A", 1, 317>, <17, 317, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 129 of 181
+  Socle type true [* <"A", 2, 8>, <17, 73, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 130 of 181
+  Socle type true [* <"A", 1, 256>, <17, 257, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 131 of 181
+  Socle type true [* <"2F", 4, 2>, <17, 16, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 132 of 181
+  Socle type true [* <"A", 1, 331>, <17, 331, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 133 of 181
+  Socle type true [* <"A", 1, 337>, <17, 337, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 134 of 181
+  Socle type true [* <17, 11, 0> *] ^ 1
+    Group is almost simple of type A_n, moving on.
+Working with socle 135 of 181
+  Socle type true [* <"A", 1, 343>, <17, 47, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 1 possible cyclic images of not prime power order.
+    Computing the quotient map Aut(T^d) -> Aut(T^d)/T^d
+    Working with cyclic image 1 of 1
+Working with socle 136 of 181
+  Socle type true [* <"A", 1, 347>, <17, 347, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 137 of 181
+  Socle type true [* <"A", 1, 349>, <17, 349, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 138 of 181
+  Socle type true [* <"A", 1, 353>, <17, 353, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 139 of 181
+  Socle type true [* <"A", 1, 359>, <17, 359, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 140 of 181
+  Socle type true [* <"A", 1, 361>, <17, 181, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 141 of 181
+  Socle type true [* <"A", 1, 367>, <17, 367, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 142 of 181
+  Socle type true [* <"A", 1, 373>, <17, 38, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 143 of 181
+  Socle type true [* <"A", 1, 379>, <17, 34, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 144 of 181
+  Socle type true [* <"A", 1, 383>, <17, 383, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 145 of 181
+  Socle type true [* <"A", 1, 389>, <17, 389, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 146 of 181
+  Socle type true [* <"A", 1, 397>, <17, 397, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 147 of 181
+  Socle type true [* <"A", 1, 401>, <17, 401, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 148 of 181
+  Socle type true [* <"2B", 2, 32>, <17, 41, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 149 of 181
+  Socle type true [* <"A", 1, 409>, <17, 409, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 150 of 181
+  Socle type true [* <"A", 1, 419>, <17, 30, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 151 of 181
+  Socle type true [* <"A", 1, 421>, <17, 421, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 152 of 181
+  Socle type true [* <"A", 1, 431>, <17, 431, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 153 of 181
+  Socle type true [* <"A", 1, 433>, <17, 433, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 154 of 181
+  Socle type true [* <"A", 1, 439>, <17, 439, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 155 of 181
+  Socle type true [* <"A", 2, 9>, <17, 21, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 156 of 181
+  Socle type true [* <"2A", 2, 9>, <17, 73, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 157 of 181
+  Socle type true [* <"A", 1, 443>, <17, 443, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 158 of 181
+  Socle type true [* <17, 11, 0>, <18, 7, "HS"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 159 of 181
+  Socle type true [* <"A", 1, 449>, <17, 449, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 160 of 181
+  Socle type true [* <"A", 1, 457>, <17, 457, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 161 of 181
+  Socle type true [* <"A", 1, 461>, <17, 461, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 162 of 181
+  Socle type true [* <"A", 1, 463>, <17, 463, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 163 of 181
+  Socle type true [* <17, 19, 0>, <18, 11, "J3"> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 164 of 181
+  Socle type true [* <"A", 1, 467>, <17, 467, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 165 of 181
+  Socle type true [* <"A", 1, 479>, <17, 479, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 166 of 181
+  Socle type true [* <"A", 1, 487>, <17, 243, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 167 of 181
+  Socle type true [* <"A", 1, 491>, <17, 54, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 168 of 181
+  Socle type true [* <"A", 1, 499>, <17, 129, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 169 of 181
+  Socle type true [* <"A", 1, 503>, <17, 251, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 170 of 181
+  Socle type true [* <"A", 1, 509>, <17, 509, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 171 of 181
+  Socle type true [* <"A", 1, 521>, <17, 521, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 172 of 181
+  Socle type true [* <"2A", 2, 11>, <17, 37, 0> *] ^ 1
+    Computing Aut(T^d)
+    Computing an isomorphic form of Aut(T^d)/T^d = Out(T) wr S_d
+    Computing the cyclic subgroups of Aut(T^d)/T^d
+  This socle type has 0 possible cyclic images of not prime power order.
+Working with socle 173 of 181
+  Socle type true [* <"A", 1, 523>, <17, 523, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 174 of 181
+  Socle type true [* <"A", 1, 529>, <17, 58, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 175 of 181
+  Socle type true [* <"A", 1, 541>, <17, 541, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 176 of 181
+  Socle type true [* <"A", 1, 547>, <17, 547, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 177 of 181
+  Socle type true [* <"A", 1, 557>, <17, 557, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 178 of 181
+  Socle type true [* <"A", 1, 563>, <17, 281, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 179 of 181
+  Socle type true [* <"A", 1, 569>, <17, 77, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 180 of 181
+  Socle type true [* <"A", 1, 571>, <17, 571, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+Working with socle 181 of 181
+  Socle type true [* <"A", 1, 577>, <17, 577, 0> *] ^ 1
+    Computing Aut(T^d)
+    Socle will have prime power index in Aut, moving on.
+0
+Time: 8605.300

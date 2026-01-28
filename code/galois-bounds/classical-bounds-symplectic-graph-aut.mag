@@ -1,0 +1,42 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for symplectic groups with a graph automorphism.
+*/
+
+//load "find-invariants.mag";
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+aSymplecticGA := 0;
+
+m:=2;
+
+for r in [2..100] do
+	q := 2^r;
+	g := 2;
+	n0 := (q^(2*m)-1)/(q-1);
+	n := g*n0;
+	G := g*q^(m^2)/GCD(2,q-1)*&*[q^(2*i)-1 : i in [1..m]];
+	w := 7*m+5;
+	
+	easya := (w-1/2)*n/Sqrt(G);
+	schmidt := g*n0*(n0+2)/4/Sqrt(G);
+	
+	a,i:=Minimum([easya,schmidt]);
+	
+	srcqm := labels[i];
+	
+	if a ge aSymplecticGA then
+		aSymplecticGA := a;
+		srcq:=q;
+		srcm:=2*m;
+		src:=srcqm;
+	end if;
+end for;
+
+print "Largest value for symplectic groups with a graph automorphism:";
+print aSymplecticGA,srcm,srcq;
+print src;

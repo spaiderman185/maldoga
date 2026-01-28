@@ -1,0 +1,363 @@
+Magma V2.27-4     Sat Oct 21 2023 14:59:58 on socrates [Seed = 3733948973]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "pgl2-experiments.mag"
+Loading "../find-invariants.mag"
+
+Working with PGL(2, 5 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 5, 6 ]
+true
+Time: 0.000
+
+Working with PGL(2, 7 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 5, 6, 6 ]
+true
+Time: 0.010
+
+Working with PGL(2, 8 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 5, 6, 6, 6, 6 ]
+true
+Time: 0.000
+
+Working with PGL(2, 9 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 5, 5, 6, 6, 6 ]
+true
+Time: 0.020
+
+Working with PGL(2, 11 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 5, 5, 6, 6, 6, 6, 6 ]
+true
+Time: 0.020
+
+Working with PGL(2, 13 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6 ]
+true
+Time: 0.070
+
+Working with PGL(2, 16 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 0.190
+
+Working with PGL(2, 17 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 0.260
+
+Working with PGL(2, 19 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 0.550
+
+Working with PGL(2, 23 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 1.740
+
+Working with PGL(2, 25 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 2.890
+
+Working with PGL(2, 27 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 
+6, 6 ]
+true
+Time: 4.420
+
+Working with PGL(2, 29 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 
+6, 6, 6, 6 ]
+true
+Time: 7.030
+
+Working with PGL(2, 31 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 
+6, 6, 6, 6, 6, 6 ]
+true
+Time: 10.940
+
+Working with PGL(2, 32 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 
+6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 13.680
+
+Working with PGL(2, 37 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 
+6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 31.580
+
+Working with PGL(2, 41 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 60.160
+
+Working with PGL(2, 43 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 80.520
+
+Working with PGL(2, 47 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 140.640
+
+Working with PGL(2, 49 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 185.430
+
+Working with PGL(2, 53 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,
+6 ]
+true
+Time: 305.980
+
+Working with PGL(2, 59 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6,
+6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 651.000
+
+Working with PGL(2, 61 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6,
+6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 717.440
+
+Working with PGL(2, 64 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 958.490
+
+Working with PGL(2, 67 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 1319.870
+
+Working with PGL(2, 71 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 1879.450
+
+Working with PGL(2, 73 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6 ]
+true
+Time: 2242.720
+
+Working with PGL(2, 79 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+....Done.
+....Degrees match.
+[ 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
+5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6 
+]
+true
+Time: 3799.430
+
+Working with PGL(2, 81 )
+Computing a lower bound on the invariant degrees using a Molien series.
+....Done.
+....Maximum degree is 6
+Trying to find independent invariants with degree bounded by 6
+
+Current total memory usage: 68531.6MB, failed memory request: 
+211106232511565.3MB
+System error: Out of memory.
+All virtual memory has been exhausted so Magma cannot perform this statement.
+
+Total time: 12821.780 seconds, Total memory usage: 86726.34MB
