@@ -1,0 +1,37 @@
+/*
+	This code verifies Lemmas 4.15 and 4.16 on the Thompson group.
+*/
+
+G:=#AtlasGroup("Th");
+n:=143127000;
+
+// Hard coding in the prime-order conjugacy classes, their sizes, and the number of fixed points.
+// This is all pulled from GAP.
+
+PrimeClassNames:=["2A","3A","3B","3C","5A","7A","13A","19A","31A","31B"];
+Fix:=[10200,3510,243,540,0,9,3,0,0,0];
+Cent:=[92897280, 12737088, 472392, 174960, 3000, 1176, 39, 19, 31, 31];
+Size:=[G/Cent[i] : i in [1..10]];
+
+Prob3Baseline := &+[Fix[i]^3*Size[i]/n^3 : i in [1..10]];
+Prob3Ord3 := &+[2*(n-Fix[i])/n^3*Size[i] : i in [2..4]];
+Prob3Ord2 := &+[3*(Fix[i]+1)*(n-Fix[i])*Size[i]/n^3 : i in [1..1]];
+Prob3 := Prob3Baseline + Prob3Ord3 + Prob3Ord2;
+
+print "The probability that the triple stabilizer is non-trivial is at most",Prob3;
+
+Prob4Baseline := &+[Fix[i]^4*Size[i]/n^4 : i in [1..10]];
+Prob4Ord3 := &+[(8*Fix[i]+12)*(n-Fix[i])/n^4*Size[i] : i in [2..4]];
+Prob4Ord2 := &+[( 3*(n-Fix[i])^2 + (12*Fix[i]^2+12*Fix[i]+1)*(n-Fix[i]))/n^4*Size[i] : i in [1..1]];
+Prob4 := Prob4Baseline + Prob4Ord3 + Prob4Ord2;
+
+print "The probability that the quadruple stabilizer is non-trivial is at most",Prob4;
+
+Prob := Prob4+4.0*Prob3;
+
+print "The overall probability a random Sigma does not work is at most", Prob;
+
+if Prob lt 1 then
+	a := (5*(n-16)+10+9*12 - n/2)/Sqrt(G);
+	print "For the Thompson group, we can take a=",a;
+end if;

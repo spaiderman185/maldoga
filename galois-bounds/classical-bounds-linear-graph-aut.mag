@@ -1,0 +1,51 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for lienar groups with a graph automorphism.
+*/
+
+//load "find-invariants.mag";
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+aLinearGA := 0;
+
+for m in [3..10] do
+	for q in [2..1000] do
+		if IsPrimePower(q) then
+			g := 2;
+			n0 := (q^m-1)/(q-1);
+			n := g*n0;
+			G := g*q^(1/2*m*(m-1))/GCD(m,q-1) * &*[q^(i+1)-1 : i in [1..m-1]];
+			w := 5*m+5;
+			
+			easya := (w-1/2)*n/Sqrt(G);
+			schmidt := g*n0*(n0+2)/4/Sqrt(G);
+			
+			a,i:=Minimum([easya,schmidt]);
+			
+			srcqm := labels[i];
+			
+			if m le 4 and q le 100 and ((m ge 4) or (m eq 3 and q ge 3)) then
+				print m,q,a;
+				print srcqm;
+				print "";
+			end if;
+			
+			if (m ge 4) or (m eq 3 and q ge 3) or (m eq 2 and (q eq 8 or q ge 11)) then
+				if a ge aLinearGA then
+					aLinearGA := a;
+					srcq:=q;
+					srcm:=m;
+					src:=srcqm;
+				end if;
+			end if;
+		end if;
+	end for;
+end for;
+
+print "Largest value for linear groups with a graph automorphism:";
+print aLinearGA,srcm,srcq;
+print src;

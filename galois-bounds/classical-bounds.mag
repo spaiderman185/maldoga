@@ -1,0 +1,19 @@
+/* This file verifies the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma. */
+
+load "find-invariants.mag";
+
+load "classical-bounds-linear-no-aut.mag";
+load "classical-bounds-linear-graph-aut.mag";
+load "classical-bounds-symplectic-no-aut.mag";
+load "classical-bounds-symplectic-graph-aut.mag";
+load "classical-bounds-unitary3.mag";
+load "classical-bounds-unitary4.mag";
+load "classical-bounds-unitary-odd.mag";
+load "classical-bounds-unitary-even.mag";
+load "classical-bounds-orthogonal-plus.mag";
+load "classical-bounds-orthogonal-4-triality.mag";
+load "classical-bounds-orthogonal-minus.mag";
+load "classical-bounds-orthogonal-odd.mag";
+
+quit;

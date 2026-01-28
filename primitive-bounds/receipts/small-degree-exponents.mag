@@ -1,0 +1,172 @@
+/* This file contains the code needed to verify Theorem 5.9 */
+
+// Begin by finding the parameter w for each n \leq 85.  
+// We only use this for n \geq 20, but for indexing purposes, we find it convenient to compute it starting at n=1.
+
+w := [];
+
+for n in [1..85] do
+	wn := 1;
+	while Binomial(wn+2,2) le 2*n do
+		wn := wn+1;
+	end while;
+	Append(~w,wn);
+end for;
+
+_<d> := FunctionField(Rationals()); // Useful to allow d to be a parameter
+
+// Now, compute the power s of X, Disc(k), and lambda in Equations (5.3) and (5.4)
+
+X53exp := [(n+2)/4*(1 + 1/(d*(n-1)-1)) : n in [1..85]];
+D53exp := [-3*n/4 - (n+2)/4/(d*(n-1)-1) : n in [1..85]];
+lam53exp := [-2*(n+2)/4*(1 + 1/(d*(n-1)-1)) : n in [1..85]];
+
+X54exp := [1 : n in [1..85]];
+D54exp := [-n : n in [1..85]];
+lam54exp := [2*d*n*w[n] - d*w[n]*(w[n]-1)*(w[n]+4)/6 - 2*d*n : n in [1..85]];
+
+// Now, compute the optimal value of lambda.  
+// We'll use lamX for the power of X, and lamD for the power of Disc(k)
+// To avoid a division-by-zero, we only compute this for n \geq 20 at this stage.
+
+shift := 19; // Used to easily account for discrepancies in indexing in a memorable way
+
+lamX := [ (X53exp[n]-X54exp[n])/(lam54exp[n]-lam53exp[n]) : n in [20..85] ];
+lamD := [ (D53exp[n]-D54exp[n])/(lam54exp[n]-lam53exp[n]) : n in [20..85] ];
+
+// Compute the net bound we obtain
+
+Xnet := [ X53exp[n] + lam53exp[n]*lamX[n-shift] : n in [20..85]];
+Dnet := [ D53exp[n] + lam53exp[n]*lamD[n-shift] : n in [20..85]];
+
+// Sanity check: this should be the same regardless of computing it through (5.3) or (5.4)
+
+if not &and[ Xnet[n-shift] eq (X54exp[n] + lam54exp[n]*lamX[n-shift]) : n in [20..85]] then
+	print "There's a mistake in computing the power of X.";
+end if;
+if not &and[ Dnet[n-shift] eq (D54exp[n] + lam54exp[n]*lamD[n-shift]) : n in [20..85]] then
+	print "There's a mistake in computing the power of D.";
+end if;
+
+// Now, find delta and gamma as in the theorem statement
+
+delta := [(n+2)/4 - Xnet[n-shift] : n in [20..85]];
+gamma := [-3*n/4 - Dnet[n-shift] : n in [20..85]];
+
+// Now, output the claimed values.
+
+print "";
+print "Outputting values claimed in Theorem 5.9.";
+print "";
+print "delta_{d,20} = ",delta[20-shift];
+print "delta_{d,85} = ",delta[85-shift];
+print "delta_{1,20} = ",Evaluate(delta[20-shift],1);
+print "             = ",RealField()!(Evaluate(delta[20-shift],1));
+print "delta_{1,23} = ",Evaluate(delta[23-shift],1);
+print "             = ",RealField()!(Evaluate(delta[23-shift],1));
+print "delta_{1,30} = ",Evaluate(delta[30-shift],1);
+print "             = ",RealField()!(Evaluate(delta[30-shift],1));
+print "delta_{1,50} = ",Evaluate(delta[50-shift],1);
+print "             = ",RealField()!(Evaluate(delta[50-shift],1));
+print "delta_{1,70} = ",Evaluate(delta[70-shift],1);
+print "             = ",RealField()!(Evaluate(delta[70-shift],1));
+print "delta_{1,85} = ",Evaluate(delta[85-shift],1);
+print "             = ",RealField()!(Evaluate(delta[85-shift],1));
+print "";
+
+// Need to check that the deltas are increasing for fixed d
+// We compute a successive difference delta[n+1]-delta[n]
+// This will be a rational function in d
+// In fact, the numerator will be a linear polynomial in d with positive coefficients
+
+print "Verifying the claim that the sequence delta_{d,n} for fixed d is increasing:";
+
+claim_holds := true;
+
+succ_diff := [delta[n+1]-delta[n] : n in [1..#delta-1]];
+numerator := [Numerator(s) : s in succ_diff];
+
+// Check that the coefficients are positive linear polynomials, as claimed above
+
+if not &and[ &and[ c gt 0 : c in Coefficients(num)] or Degree(num) ne 1: num in numerator] then
+	print "    Some numerator isn't a linear polynomial with positive coefficients.";
+	claim_holds := false;
+else
+	print "    Each successive difference delta_{d,n+1}-delta_{d,n} has no positive root in d.";
+end if;
+
+// We now know that every successive difference has a fixed sign (independent of d), since it can't have any roots.
+// Hence, it suffices to check that each successive difference is positive when d=1.
+
+if &or[ Evaluate(s,1) le 0 : s in succ_diff] then
+	print "    Some successive difference is negative when d=1.";
+	claim_holds := false;
+else
+	print "    Each successive difference is positive when d=1.";
+end if;
+
+if claim_holds then
+	print "    Every successive difference is positive, so the claim holds.";
+else
+	print "    Something went wrong in proving the claim.";
+end if;
+
+if claim_holds then
+	print "Combined with the provided value of delta_{d,20}, this shows that every delta_{d,n} is positive.";
+end if;
+
+// Need to check that the gammas are positive
+// In fact, each gamma is the reciprocal of a linear polynomial
+// Hence, it will suffice to verify the claim when d=1 (even if this is sort of meaningless in the theorem)
+
+print "";
+print "Verifying the claim that every gamma_{d,n} is positive:";
+
+
+claim_holds := true;
+
+// Check that each gamma is the reciprocal of a positive linear polynomial.
+// (Note: I don't want to worry about how Magma assigns a possible sign to a constant numerator.)
+
+if &and[ (Degree(Numerator(g)) eq 0) and (Degree(Denominator(g)) eq 1) and &and[c gt 0 : c in Coefficients(Denominator(g))] : g in gamma] then
+	print "    Every gamma is the reciprocal of a positive linear polynomial.";
+else
+	claim_holds := false;
+	print "    Some gamma is not the reciprocal of a positive linear polynomial.";
+end if;
+
+// Check that each gamma is positive when d=1
+if not &and[ Evaluate(g,1) gt 0 : g in gamma] then
+	claim_holds := false;
+	print "    Some gamma is not positive when d=1.";
+else
+	print "    Every gamma is positive when d=1.";
+end if;
+
+if claim_holds then
+	print "    This verifies the claim that each gamma is positive.";
+else
+	print "    Something went wrong in the verification of this claim.";
+end if;
+
+print "";
+print "-----------------";
+print "";
+print "For reference, we now print all values of delta when d=1.";
+print "";
+for n in [20..85] do
+	print "delta_{1,",n,"} = ",Evaluate(delta[n-shift],1), " = ",RealField()!(Evaluate(delta[n-shift],1));
+end for;
+
+print "";
+print "----------------";
+print "";
+print "We also now print all values of delta and gamma.";
+print "";
+for n in [20..85] do
+	print "delta_{d,",n,"} = ",delta[n-shift];
+	print "gamma_{d,",n,"} = ",gamma[n-shift];
+	print "";
+end for;
+
+quit;

@@ -1,0 +1,422 @@
+/* 
+This code verifies the bounds claimed on exceptional groups in Lemma 4.11.
+*/
+
+load "find-invariants.mag";
+
+// G2
+
+biggesta := 0;
+src:="";
+srcq:=0;
+
+for q in [3..100] do
+	T := "G2";
+	if IsPrimePower(q) then
+		n := (q^6-1)/(q-1);
+		G := q^6*(q^6-1)*(q^2-1);
+		w := 15;
+		
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if q eq 3 then
+			T:=PrimitiveGroup(364,1);
+			irrel,i:=Minimum([#Stabilizer(T,[1,i]) : i in [1..n]]);
+			minstab,j:=Minimum([#Stabilizer(T,[1,i,j]) : j in [1..n]]);
+			if minstab eq 1 then
+				// Base of size 3
+				w:=10;
+				a:=(w-1/2)*n/Sqrt(G);
+				srcqm:="Base of size 3.";
+			end if;
+		end if;
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+for r in [1..20] do
+	T := "G2 with aut";
+	q:=3^r;
+	g:=2;
+	n0 := (q^6-1)/(q-1);
+	n := g*n0;
+	G := g*q^6*(q^6-1)*(q^2-1);
+	w := 15;
+	
+	a := (w-1/2)*n/Sqrt(G);
+	srcqm:="Easy invariants.";
+	
+	
+	if q eq 3 then
+		T:=PrimitiveGroup(364,1);
+		irrel,i:=Minimum([#Stabilizer(T,[1,i]) : i in [1..n0]]);
+		minstab,j:=Minimum([#Stabilizer(T,[1,i,j]) : j in [1..n0]]);
+		if minstab eq 1 then
+			// Base of size 3
+			w:=10;
+			a:=(w-1/2)*n/Sqrt(G);
+			srcqm:="Base of size 3.";
+		end if;
+	end if;
+	
+	if a gt biggesta then
+		biggesta := a;
+		srcq:=q;
+		src:=srcqm;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+
+// F4
+
+for q in [2..100] do
+	T := "F4";
+	if IsPrimePower(q) then
+		n := (q^12-1)*(q^4+1)/(q-1);
+		G := q^24*(q^12-1)*(q^8-1)*(q^6-1)*(q^2-1);
+		w:=21;
+		
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// F4 with aut
+
+for r in [1..20] do
+	T := "F4 with aut";
+	q := 2^r;
+	g := 2;
+	n0 := (q^12-1)*(q^4+1)/(q-1);
+	n := n0*g;
+	G := g*q^24*(q^12-1)*(q^8-1)*(q^6-1)*(q^2-1);
+	w:=21;
+	
+	a := (w-1/2)*n/Sqrt(G);
+	srcqm:="Easy invariants.";
+	
+	if a gt biggesta then
+		biggesta := a;
+		srcq:=q;
+		src:=srcqm;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+
+// E6
+
+for q in [2..100] do
+	T := "E6";
+	if IsPrimePower(q) then
+		n := (q^9-1)*(q^8+q^4+1)/(q-1);
+		G := q^36*(q^12-1)*(q^9-1)*(q^8-1)*(q^6-1)*(q^5-1)*(q^2-1)/GCD(3,q-1);
+		w := 28;
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// E6 with aut
+
+for q in [2..100] do
+	T := "E6 with aut";
+	if IsPrimePower(q) then
+		g := 2;
+		n0 := (q^9-1)*(q^8+q^4+1)/(q-1);
+		n := g*n0;
+		G := g*q^36*(q^12-1)*(q^9-1)*(q^8-1)*(q^6-1)*(q^5-1)*(q^2-1)/GCD(3,q-1);
+		w := 28;
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+
+// E7
+
+for q in [2..100] do
+	T := "E7";
+	if IsPrimePower(q) then
+		n := (q^14-1)*(q^9+1)*(q^5+1)/(q-1);
+		G := q^63*(q^18-1)*(q^14-1)*(q^12-1)*(q^10-1)*(q^8-1)*(q^6-1)*(q^2-1)/GCD(2,q-1);
+		w:=21;
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// E8
+
+for q in [2..100] do
+	T := "E8";
+	if IsPrimePower(q) then
+		n := (q^30-1)*(q^12+1)*(q^10+1)*(q^6+1)/(q-1);
+		G := q^120*(q^30-1)*(q^24-1)*(q^20-1)*(q^18-1)*(q^14-1)*(q^12-1)*(q^8-1)*(q^2-1);
+		w:=15;
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+
+// 2E6
+
+for q in [2..100] do
+	T := "2E6";
+	if IsPrimePower(q) then
+		n := (q^12-1)*(q^6-q^3+1)*(q^4+1)/(q-1);
+		G := q^36*(q^12-1)*(q^9+1)*(q^8-1)*(q^6-1)*(q^5+1)*(q^2-1)/GCD(3,q+1);
+		w :=15;
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// 3D4
+
+for q in [2..100] do
+	T := "3D4";
+	if IsPrimePower(q) then
+		n := (q^8+q^4+1)*(q+1);
+		G := q^12*(q^8+q^4+1)*(q^6-1)*(q^2-1);
+		w := 15;
+		a := (w-1/2)*n/Sqrt(G);
+		srcqm:="Easy invariants.";
+		
+		if a gt biggesta then
+			biggesta := a;
+			srcq:=q;
+			src:=srcqm;
+		end if;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// 2B2
+for r in [1..20] do
+	T := "2B2";
+	q := 2^(2*r+1);
+	n := q^2+1;
+	G := q^2*(q^2+1)*(q-1);
+	w := 10;
+	a := (w-1/2)*n/Sqrt(G);
+	srcqm:="Easy invariants.";
+	
+	if r eq 1 then
+		S:=PrimitiveGroup(65,3);
+		Gamma:=PrimitiveGroup(65,5);
+		
+		MinInvsT := FindMinimalInvariants(S);
+		MinInvsGamma := FindMinimalInvariants(Gamma);
+		bdT := (&+MinInvsT - n/2)/Sqrt(G);
+		bdG := (&+MinInvsGamma - n/2)/Sqrt(3*G);
+		mininvbd,i := Maximum([bdT,bdG]);
+		if mininvbd lt a then
+			a := mininvbd;
+			srcqm := ["Minimal T invariants; " cat Sprint(Multiset(MinInvsT)), "Minimal Gamma invariants; " cat Sprint(Multiset(MinInvsGamma))][i];
+		end if;
+	end if;
+	
+	if a gt biggesta then
+		biggesta := a;
+		srcq:=q;
+		src:=srcqm;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// 2F4
+for r in [1..20] do
+	T := "2F4";
+	q := 2^(2*r+1);
+	n := (q^6+1)*(q^3+1)*(q+1);
+	G := q^12*(q^6+1)*(q^4-1)*(q^3+1)*(q-1);
+	w:=10;
+	a := (w-1/2)*n/Sqrt(G);
+	srcqm:="Easy invariants.";
+	
+	if a gt biggesta then
+		biggesta := a;
+		srcq:=q;
+		src:=srcqm;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// 2G2
+for r in [1..20] do
+	T := "2G2";
+	q := 3^(2*r+1);
+	n := q^3+1;
+	G := q^3*(q^3+1)*(q-1);
+	w:=10;
+	a := (w-1/2)*n/Sqrt(G);
+	srcqm:="Easy invariants.";
+	
+	if a gt biggesta then
+		biggesta := a;
+		srcq:=q;
+		src:=srcqm;
+	end if;
+end for;
+
+print "Biggest a for type",T;
+print biggesta,srcq;
+print src;
+print "";
+biggesta := 0;
+src:="";
+srcq:=0;
+
+// Tits
+
+T := "Tits";
+S:=PrimitiveGroup(1755,1);
+Gamma:=PrimitiveGroup(1755,2);
+if #Stabilizer(Gamma,{1,2,3,6}) eq 1 then
+	n:=1755;
+	G:=#S;
+	a:=(5*(n-16)+10+9*12 - n/2)/Sqrt(G);
+	
+	print "Biggest a for",T;
+	print a;
+	print "";
+end if;
+
+
+quit;

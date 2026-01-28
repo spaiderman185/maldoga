@@ -1,0 +1,182 @@
+Magma V2.27-4     Sat Nov 11 2023 16:43:09 on socrates [Seed = 1131008507]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "pgammal2-lower-bounds.mag"
+Loading "../../find-invariants.mag"
+
+Working with PGammaL(2, 8 )
+{* 1, 2, 3, 4, 5, 6^^2, 7^^2 *}
+Time: 0.000
+
+Working with PGammaL(2, 9 )
+{* 1, 2, 3, 4^^2, 5^^2, 6^^3 *}
+Time: 0.000
+
+Working with PGammaL(2, 16 )
+{* 1, 2, 3, 4^^2, 5^^3, 6^^7, 7^^2 *}
+Time: 0.010
+
+Working with PGammaL(2, 25 )
+{* 1, 2, 3, 4^^4, 5^^7, 6^^12 *}
+Time: 0.010
+
+Working with PGammaL(2, 27 )
+{* 1, 2, 3, 4^^3, 5^^4, 6^^18 *}
+Time: 0.010
+
+Working with PGammaL(2, 32 )
+{* 1, 2, 3, 4, 5^^3, 6^^20, 7^^6 *}
+Time: 0.000
+
+Working with PGammaL(2, 49 )
+{* 1, 2, 3, 4^^7, 5^^18, 6^^22 *}
+Time: 0.020
+
+Working with PGammaL(2, 64 )
+{* 1, 2, 3, 4^^4, 5^^11, 6^^47 *}
+Time: 0.040
+
+Working with PGammaL(2, 81 )
+{* 1, 2, 3, 4^^6, 5^^22, 6^^51 *}
+Time: 0.060
+
+Working with PGammaL(2, 121 )
+{* 1, 2, 3, 4^^14, 5^^80, 6^^25 *}
+Time: 0.200
+
+Working with PGammaL(2, 125 )
+{* 1, 2, 3, 4^^9, 5^^51, 6^^63 *}
+Time: 0.210
+
+Working with PGammaL(2, 128 )
+{* 1, 2, 3, 4^^3, 5^^21, 6^^102 *}
+Time: 0.090
+
+Working with PGammaL(2, 169 )
+{* 1, 2, 3, 4^^19, 5^^145, 6^^3 *}
+Time: 0.660
+
+Working with PGammaL(2, 243 )
+{* 1, 2, 3, 4^^9, 5^^104, 6^^128 *}
+Time: 0.760
+
+Working with PGammaL(2, 256 )
+{* 1, 2, 3, 4^^8, 5^^81, 6^^165 *}
+Time: 1.200
+
+Working with PGammaL(2, 289 )
+{* 1, 2, 3, 4^^30, 5^^257 *}
+Time: 2.530
+
+Working with PGammaL(2, 343 )
+{* 1, 2, 3, 4^^22, 5^^319 *}
+Time: 3.280
+
+Working with PGammaL(2, 361 )
+{* 1, 2, 3, 4^^37, 5^^322 *}
+Time: 4.790
+
+Working with PGammaL(2, 512 )
+{* 1, 2, 3, 4^^11, 5^^251, 6^^248 *}
+Time: 8.580
+
+Working with PGammaL(2, 529 )
+{* 1, 2, 3, 4^^52, 5^^475 *}
+Time: 20.180
+
+Working with PGammaL(2, 625 )
+{* 1, 2, 3, 4^^32, 5^^591 *}
+Time: 21.780
+
+Working with PGammaL(2, 729 )
+{* 1, 2, 3, 4^^26, 5^^701 *}
+Time: 54.980
+
+Working with PGammaL(2, 841 )
+{* 1, 2, 3, 4^^80, 5^^759 *}
+Time: 113.200
+
+Working with PGammaL(2, 961 )
+{* 1, 2, 3, 4^^91, 5^^868 *}
+Time: 230.020
+
+Working with PGammaL(2, 1024 )
+{* 1, 2, 3, 4^^20, 5^^907, 6^^95 *}
+Time: 239.170
+
+Working with PGammaL(2, 1331 )
+{* 1, 2, 3, 4^^78, 5^^1251 *}
+Time: 1004.490
+
+Working with PGammaL(2, 1369 )
+{* 1, 2, 3, 4^^127, 5^^1240 *}
+Time: 731.010
+
+Working with PGammaL(2, 1681 )
+{* 1, 2, 3, 4^^154, 5^^1525 *}
+Time: 2579.060
+
+Working with PGammaL(2, 1849 )
+{* 1, 2, 3, 4^^169, 5^^1678 *}
+Time: 4799.850
+
+Working with PGammaL(2, 2048 )
+{* 1, 2, 3, 4^^31, 5^^2015 *}
+Time: 958.320
+
+Working with PGammaL(2, 2187 )
+{* 1, 2, 3, 4^^53, 5^^2132 *}
+Time: 993.640
+
+Working with PGammaL(2, 2197 )
+{* 1, 2, 3, 4^^127, 5^^2068 *}
+Time: 4304.410
+
+Working with PGammaL(2, 2209 )
+{* 1, 2, 3, 4^^200, 5^^2007 *}
+Time: 9654.320
+
+Working with PGammaL(2, 2401 )
+{* 1, 2, 3, 4^^111, 5^^2288 *}
+Time: 7207.830
+
+Working with PGammaL(2, 2809 )
+{* 1, 2, 3, 4^^252, 5^^2555 *}
+Time: 16847.210
+
+Working with PGammaL(2, 3125 )
+{* 1, 2, 3, 4^^105, 5^^3018 *}
+Time: 11429.960
+
+Working with PGammaL(2, 3481 )
+{* 1, 2, 3, 4^^310, 5^^3169 *}
+Time: 25146.540
+
+Working with PGammaL(2, 3721 )
+{* 1, 2, 3, 4^^331, 5^^3388 *}
+Time: 32017.760
+
+Working with PGammaL(2, 4096 )
+{* 1, 2, 3, 4^^64, 5^^4030 *}
+Time: 83873.250
+
+Working with PGammaL(2, 4489 )
+{* 1, 2, 3, 4^^397, 5^^4090 *}
+Time: 96222.530
+
+Working with PGammaL(2, 4913 )
+{* 1, 2, 3, 4^^279, 5^^4632 *}
+Time: 154797.670
+
+Total time: 453269.630 seconds, Total memory usage: 1358.12MB

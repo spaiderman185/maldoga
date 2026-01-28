@@ -1,0 +1,13 @@
+load "../../find-invariants.mag";
+
+UpperBound := 500;
+
+for q in [4..UpperBound] do
+	if IsPrimePower(q) and not IsPrime(q) then
+		print "";
+		print "Working with PGammaL(3,",q,")";
+		time Multiset(GuessInvariantDegree(PGammaL(3,q)));
+	end if;
+end for;
+
+quit;

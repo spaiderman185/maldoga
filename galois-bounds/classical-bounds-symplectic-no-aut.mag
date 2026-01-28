@@ -1,0 +1,63 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for symplectic groups without a graph automorphism.
+*/
+
+//load "find-invariants.mag";
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+aSymplecticNA := 0;
+
+for m in [2..10] do
+	for q in [2..1000] do
+		if IsPrimePower(q) and (m ge 3 or q ge 3) then
+			n := (q^(2*m)-1)/(q-1);
+			G := q^(m^2)/GCD(2,q-1)*&*[q^(2*i)-1 : i in [1..m]];
+			w := 7*m+5;
+			
+			easya := (w-1/2)*n/Sqrt(G);
+			schmidt := n*(n+2)/4/Sqrt(G);
+			
+			a,i:=Minimum([easya,schmidt]);
+			
+			srcqm := labels[i];
+			
+			if m eq 2 and (q eq 3 or q eq 4) then
+				MinInvsT := FindMinimalInvariants(PSp(4,q));
+				GammaSp:=Normalizer(SymmetricGroup(Integers()!n),PSp(4,q));
+				MinInvsG := FindMinimalInvariants(GammaSp);
+				bdT := (&+MinInvsT - n/2)/Sqrt(G);
+				bdG := (&+MinInvsG - n/2)/Sqrt(2*G);
+				
+				mininvbd,i := Maximum([bdT,bdG]);
+				if mininvbd lt a then
+					a := mininvbd;
+					srcqm := ["PSp(4," cat Sprint(q) cat ") invariants; " cat Sprint(Multiset(MinInvsT)), "PGammaSp(4," cat Sprint(q) cat ") invariants; " cat Sprint(Multiset(MinInvsG))][i];
+				end if;
+			end if;
+			
+			if m eq 2 and q eq 5 then
+				bettereasy := (19*(n-18)+18*19/2 - n/2)/Sqrt(G);
+				if bettereasy lt a then
+					a := bettereasy;
+					srcqm := "Better version of easy invariants.";
+				end if;
+			end if;
+			
+			if a ge aSymplecticNA then
+				aSymplecticNA := a;
+				srcq:=q;
+				srcm:=2*m;
+				src:=srcqm;
+			end if;
+		end if;
+	end for;
+end for;
+
+print "Largest value for symplectic groups without a graph automorphism:";
+print aSymplecticNA,srcm,srcq;
+print src;

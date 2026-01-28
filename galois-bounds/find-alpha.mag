@@ -1,0 +1,393 @@
+/* 
+This code finds the minimal value of alpha admissible in Lemma 4.17.
+*/
+
+alpha:=0;
+src:="";
+srcq:=0;
+srcm:=0;
+
+// First, check sporadics with a useful permutation representation
+
+SporadicsWithRep := ["M11","M12","M22","M23","M24", "J1", "J2", "J3", "HS", "McL", "Co3", "Co2", "He", "Suz", "F22", "Ru", "F23", "Co1", "HN", "ON", "F24"];
+
+for T in SporadicsWithRep do
+	G:=PermutationGroup(T);
+	n:=Degree(G);
+	if n/Sqrt(#G) gt alpha then
+		alpha := n/Sqrt(#G);
+		src := T;
+		srcq := 0;
+		srcm := 0;
+	end if;
+end for;
+
+// M12.2, ON.2 are different
+
+Spord2 := ["M12", "ON"];
+for T in Spord2 do
+	G:=PermutationGroup(T);
+	n:=2*Degree(G);
+	if n/Sqrt(2*#G) gt alpha then
+		alpha := n/Sqrt(2*#G);
+		src := T cat ".2";
+		srcq := 0;
+		srcm := 0;
+	end if;
+end for;
+
+// Check the remaining sporadics without a useful permutation representation
+
+SporadicsWithoutRep := ["J4", "Ly", "Th", "B", "M"];
+NoRepDegs := [173067389, 8835156, 143127000, 13571955000, 97239461142009186000];
+
+for i in [1..5] do
+	T := SporadicsWithoutRep[i];
+	G:=AtlasGroup(T);
+	n:=NoRepDegs[i];
+	if n/Sqrt(#G) gt alpha then
+		alpha := n/Sqrt(#G);
+		src := T;
+		srcq := 0;
+		srcm := 0;
+	end if;
+end for;
+
+//Check the Tits group
+
+T:="Tits";
+G:=PrimitiveGroup(1755,1);
+n:=1755;
+if n/Sqrt(#G) gt alpha then
+	alpha := n/Sqrt(#G);
+	src := T;
+	srcq := 0;
+	srcm := 0;
+end if;
+
+// G2
+
+for q in [3..100] do
+	T := "G2";
+	if IsPrimePower(q) then
+		n := (q^6-1)/(q-1);
+		G := q^6*(q^6-1)*(q^2-1);
+		if n/Sqrt(G) gt alpha then
+			alpha := n/Sqrt(G);
+			src := T;
+			srcq := q;
+			srcm := 0;
+		end if;
+		
+		if Factorization(q)[1][1] eq 3 and n/Sqrt(G)*Sqrt(2) gt alpha then
+			alpha := n/Sqrt(G)*Sqrt(2);
+			src := T cat ".2";
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// F4
+
+for q in [2..100] do
+	T := "F4";
+	if IsPrimePower(q) then
+		n := (q^12-1)*(q^4+1)/(q-1);
+		G := q^24*(q^12-1)*(q^8-1)*(q^6-1)*(q^2-1);
+		if n/Sqrt(G) gt alpha then
+			alpha := n/Sqrt(G);
+			src := T;
+			srcq := q;
+			srcm := 0;
+		end if;
+		
+		if Factorization(q)[1][1] eq 2 and n/Sqrt(G)*Sqrt(2) gt alpha then
+			alpha := n/Sqrt(G)*Sqrt(2);
+			src := T cat ".2";
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// E6
+
+for q in [2..100] do
+	T := "E6";
+	if IsPrimePower(q) then
+		n := (q^9-1)*(q^8+q^4+1)/(q-1);
+		G := q^36*(q^12-1)*(q^9-1)*(q^8-1)*(q^6-1)*(q^5-1)*(q^2-1)/GCD(3,q-1);
+		if n/Sqrt(G)*Sqrt(2) gt alpha then
+			alpha := n/Sqrt(G)*Sqrt(2);
+			src := T cat ".2";
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// E7
+
+for q in [2..100] do
+	T := "E7";
+	if IsPrimePower(q) then
+		n := (q^14-1)*(q^9+1)*(q^5+1)/(q-1);
+		G := q^63*(q^18-1)*(q^14-1)*(q^12-1)*(q^10-1)*(q^8-1)*(q^6-1)*(q^2-1)/GCD(2,q-1);
+		if n/Sqrt(G) gt alpha then
+			alpha := n/Sqrt(G);
+			src := T;
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// E8
+
+for q in [2..100] do
+	T := "E8";
+	if IsPrimePower(q) then
+		n := (q^30-1)*(q^12+1)*(q^10+1)*(q^6+1)/(q-1);
+		G := q^120*(q^30-1)*(q^24-1)*(q^20-1)*(q^18-1)*(q^14-1)*(q^12-1)*(q^8-1)*(q^2-1);
+		if n/Sqrt(G) gt alpha then
+			alpha := n/Sqrt(G);
+			src := T;
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// 2E6
+
+for q in [2..100] do
+	T := "2E6";
+	if IsPrimePower(q) then
+		n := (q^12-1)*(q^6-q^3+1)*(q^4+1)/(q-1);
+		G := q^36*(q^12-1)*(q^9+1)*(q^8-1)*(q^6-1)*(q^5+1)*(q^2-1)/GCD(3,q+1);
+		if n/Sqrt(G) gt alpha then
+			alpha := n/Sqrt(G);
+			src := T;
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// 3D4
+
+for q in [2..100] do
+	T := "3D4";
+	if IsPrimePower(q) then
+		n := (q^8+q^4+1)*(q+1);
+		G := q^12*(q^8+q^4+1)*(q^6-1)*(q^2-1);
+		if n/Sqrt(G) gt alpha then
+			alpha := n/Sqrt(G);
+			src := T;
+			srcq := q;
+			srcm := 0;
+		end if;
+	end if;
+end for;
+
+// 2B2
+for r in [1..20] do
+	T := "2B2";
+	q := 2^(2*r+1);
+	n := q^2+1;
+	G := q^2*(q^2+1)*(q-1);
+	if n/Sqrt(G) gt alpha then
+		alpha := n/Sqrt(G);
+		src := T;
+		srcq := q;
+		srcm := 0;
+	end if;
+end for;
+
+// 2F4
+for r in [1..20] do
+	T := "2F4";
+	q := 2^(2*r+1);
+	n := (q^6+1)*(q^3+1)*(q+1);
+	G := q^12*(q^6+1)*(q^4-1)*(q^3+1)*(q-1);
+	if n/Sqrt(G) gt alpha then
+		alpha := n/Sqrt(G);
+		src := T;
+		srcq := q;
+		srcm := 0;
+	end if;
+end for;
+
+// 2G2
+for r in [1..20] do
+	T := "2G2";
+	q := 3^(2*r+1);
+	n := q^3+1;
+	G := q^3*(q^3+1)*(q-1);
+	if n/Sqrt(G) gt alpha then
+		alpha := n/Sqrt(G);
+		src := T;
+		srcq := q;
+		srcm := 0;
+	end if;
+end for;
+
+// A_n
+
+for n in [5..100] do
+	T := "Alt";
+	G := Factorial(n)/2;
+	a:= n/Sqrt(G);
+	if a gt alpha then
+		alpha := a;
+		src := T;
+		srcq := 0;
+		srcm := n;
+	end if;
+	if n eq 6 then
+		if 10/Sqrt(720) gt alpha then
+			alpha := 10/Sqrt(720);
+			src := "Alt6(10)";
+			srcq:=0;
+			srcm:=0;
+		end if;
+	end if;
+end for;
+
+// PSL
+for m in [2..10] do
+	for q in [2..100] do
+		if IsPrimePower(q) then
+			T := "PSL";
+			g := 1;
+			if m ge 3 then
+				g:=2;
+			end if;
+			n := g*(q^m-1)/(q-1);
+			G := g*q^(1/2*m*(m-1))/GCD(m,q-1) * &*[q^(i+1)-1 : i in [1..m-1]];
+			a := n/Sqrt(G);
+			if (m ge 4) or (m eq 3 and q ge 3) or (m eq 2 and (q eq 8 or q ge 11)) then
+				if a ge alpha then
+					alpha := a;
+					src := T;
+					if g eq 2 then
+						src := src cat ".2";
+					end if;
+					srcq:=q;
+					srcm:=m;
+				end if;
+			end if;
+		end if;
+	end for;
+end for;
+
+// PSp
+for m in [2..10] do
+	for q in [2..100] do
+		if IsPrimePower(q) then
+			g := 1;
+			if m eq 2 and Factorization(q)[1][1] eq 2 then
+				g := 2;
+			end if;
+			n := (q^(2*m)-1)/(q-1)*g;
+			G := g*q^(m^2)/GCD(2,q-1)*&*[q^(2*i)-1 : i in [1..m]];
+			a := n/Sqrt(G);
+			if (m ge 3) or (m eq 2 and q ge 3) then
+				if a gt alpha then
+					alpha := a;
+					src := "PSp";
+					if g eq 2 then
+						src := src cat ".2";
+					end if;
+					srcq := q;
+					srcm := 2*m;
+				end if;
+			end if;
+		end if;
+	end for;
+end for;
+
+// PSU
+for m in [3..10] do
+	for q in [2..100] do
+		if IsPrimePower(q) then
+			eps := (-1)^(m);
+			n := (q^m - eps)*(q^(m-1)+eps)/(q^2-1);
+			if m eq 4 then
+				n := (q^3+1)*(q+1);
+			end if;
+			G := 1/GCD(m,q+1)*q^(1/2*m*(m-1))*&*[q^(i+1)-(-1)^(i+1) : i in [1..m-1]];
+			a := n/Sqrt(G);
+			if (m ge 4) or (m eq 3 and q ge 3) then
+				if a gt alpha then
+					alpha := a;
+					src := "PSU";
+					srcq := q;
+					srcm := m;
+				end if;
+			end if;
+		end if;
+	end for;
+end for;
+
+//POmegaOdd
+for m in [3..10] do
+	for q in [3..100] do
+		if IsPrimePower(q) eq true and Factorization(q)[1][1] ne 2 then
+			n := (q^(2*m)-1)/(q-1);
+			G := q^(m^2)/GCD(2,q-1)*&*[q^(2*i)-1 : i in [1..m]];
+			a := n/Sqrt(G);
+			if a gt alpha then
+				alpha := a;
+				src := "POmega";
+				srcq:=q;
+				srcm := 2*m+1;
+			end if;
+		end if;
+	end for;
+end for;
+
+//POmegaMinus
+for m in [4..10] do
+	for q in [2..100] do
+		if IsPrimePower(q) eq true then
+			n := (q^(m)-1)*(q^(m-1)+1)/(q-1);
+			G := q^(m*(m-1))/GCD(4,q^m+1)*(q^m+1)*&*[q^(2*i)-1 : i in [1..m-1]];
+			a := n/Sqrt(G);
+			if a gt alpha then
+				alpha := a;
+				src := "POmega";
+				srcq:=q;
+				srcm := 2*m;
+			end if;
+		end if;
+	end for;
+end for;
+
+//POmegaPlus
+for m in [4..10] do
+	for q in [2..100] do
+		if IsPrimePower(q) eq true then
+			g := 1;
+			if m eq 4 then
+				g:=3;
+			end if;
+			n := g*(q^(m)-1)*(q^(m-1)+1)/(q-1);
+			G := g*q^(m*(m-1))/GCD(4,q^m-1)*(q^m-1)*&*[q^(2*i)-1 : i in [1..m-1]];
+			a := n/Sqrt(G);
+			if a gt alpha then
+				alpha := a;
+				src := "POmega";
+				if g eq 2 then
+					src := src cat ".2";
+				end if;
+				srcq:=q;
+				srcm := 2*m;
+			end if;
+		end if;
+	end for;
+end for;
+
+print alpha, src, srcq,srcm;
+quit;

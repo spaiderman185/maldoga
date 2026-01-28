@@ -1,0 +1,18 @@
+Magma V2.25-6     Wed May 15 2024 12:36:23 on eratosthenes [Seed = 1534713128]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "find-beta.mag"
+7.56086414814250360279362867543 PSU 3 3
+
+Total time: 3.029 seconds, Total memory usage: 32.09MB

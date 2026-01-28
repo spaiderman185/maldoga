@@ -1,0 +1,54 @@
+Magma V2.27-4     Sat Nov 11 2023 16:49:31 on socrates [Seed = 1716320080]
+
++-------------------------------------------------------------------+
+|       This copy of Magma has been made available through a        |
+|                   generous initiative of the                      |
+|                                                                   |
+|                         Simons Foundation                         |
+|                                                                   |
+| covering U.S. Colleges, Universities, Nonprofit Research entities,|
+|               and their students, faculty, and staff              |
++-------------------------------------------------------------------+
+
+Type ? for help.  Type <Ctrl>-D to quit.
+
+Loading file "pgammal3-lower-bounds.mag"
+Loading "../../find-invariants.mag"
+
+Working with PGammaL(3, 8 )
+{* 1, 2, 3^^2, 4^^3, 5^^6, 6^^20, 7^^40 *}
+Time: 0.050
+
+Working with PGammaL(3, 9 )
+{* 1, 2, 3^^2, 4^^4, 5^^10, 6^^43, 7^^30 *}
+Time: 0.110
+
+Working with PGammaL(3, 16 )
+{* 1, 2, 3^^2, 4^^4, 5^^12, 6^^84, 7^^169 *}
+Time: 2.850
+
+Working with PGammaL(3, 25 )
+{* 1, 2, 3^^2, 4^^6, 5^^24, 6^^520, 7^^97 *}
+Time: 71.600
+
+Working with PGammaL(3, 27 )
+{* 1, 2, 3^^2, 4^^5, 5^^16, 6^^409, 7^^323 *}
+Time: 68.890
+
+Working with PGammaL(3, 32 )
+{* 1, 2, 3^^2, 4^^3, 5^^10, 6^^422, 7^^618 *}
+Time: 237.440
+
+Working with PGammaL(3, 49 )
+{* 1, 2, 3^^2, 4^^9, 5^^52, 6^^2386 *}
+Time: 17632.480
+
+Working with PGammaL(3, 64 )
+{* 1, 2, 3^^2, 4^^6, 5^^32, 6^^4119 *}
+Time: 115026.000
+
+Working with PGammaL(3, 81 )
+{* 1, 2, 3^^2, 4^^8, 5^^58, 6^^6573 *}
+Time: 552880.990
+
+Working with PGammaL(3, 121 )

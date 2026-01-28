@@ -1,0 +1,117 @@
+/* This file is part of the verification of the bounds on classical almost simple groups presented in Lemma 4.10.
+It implements the strategy from that lemma.
+This particular file is for linear groups without a graph automorphism.
+*/
+
+//load "find-invariants.mag";
+
+src:="";
+srcq:=0;
+srcm:=0;
+labels:=["Easy invariants", "Schmidt"];
+
+aLinearNA := 0;
+
+for m in [2..10] do
+	for q in [2..1000] do
+		if IsPrimePower(q) then
+			n := (q^m-1)/(q-1);
+			G := q^(1/2*m*(m-1))/GCD(m,q-1) * &*[q^(i+1)-1 : i in [1..m-1]];
+			w := 5*m+5;
+			
+			easya := (w-1/2)*n/Sqrt(G);
+			schmidt := n*(n+2)/4/Sqrt(G);
+			
+			a,i:=Minimum([easya,schmidt]);
+			
+			srcqm := labels[i];
+			
+			if m eq 2 and q eq 7 then
+				/* PSL(2,7) 
+					Need to take the larger of two things here:
+					1) The degree 7 Schmidt bound for PSL(2,7)
+					2) The degree 8 Schmidt bound for PSL(2,7).2
+						(No deg. 7 rep.)
+				*/
+				
+				deg7 := 7*9/4/Sqrt(G);
+				deg8 := 8*10/4/Sqrt(2*G);
+				bd,i := Maximum([deg7,deg8]);
+				
+				if bd lt a then
+					a:=bd;
+					srcqm := ["PSL(2,7) deg 7", "PSL(2,7).2 deg 8"][i];
+				end if;
+			end if;
+			
+			if m eq 2 and q eq 11 then
+				/* PSL(2,11) 
+					Need to take the larger of two things here:
+					1) The degree 11 Schmidt bound for PSL(2,11)
+					2) The degree 12 Schmidt bound for PSL(2,12).2
+						(No deg. 11 rep.)
+				*/
+				
+				deg11 := 11*12/4/Sqrt(G);
+				deg12 := 12*14/4/Sqrt(2*G);
+				bd,i := Maximum([deg11,deg12]);
+				
+				if bd lt a then
+					a:=bd;
+					srcqm := ["PSL(2,11) deg 11", "PSL(2,11).2 deg 12"][i];
+				end if;
+			end if;
+			
+			if m eq 2 and ((q ge 23 and IsPrime(q)) or (q ge 81)) then
+				bd := (11*q+125)/2/Sqrt(G);
+				if bd lt a then
+					a:=bd;
+					srcqm:="Better invariants.";
+				end if;
+			end if;
+			
+			if m eq 2 and ((q ge 13 and q le 43) or (q eq 49) or (q eq 64)) then
+				if q eq 13 then
+					MinInvsT := FindMinimalInvariants(PSL(2,13));
+					MinInvsG := FindMinimalInvariants(PGammaL(2,13));
+					bdT := (&+MinInvsT - n/2)/Sqrt(G);
+					bdG := (&+MinInvsG - n/2)/Sqrt(2*G);
+					mininvbd,i := Maximum([bdT,bdG]);
+					if mininvbd lt a then
+						a := mininvbd;
+						srcqm := ["PSL(2,13) invariants; " cat Sprint(Multiset(MinInvsT)), "PGL(2,13) invariants; " cat Sprint(Multiset(MinInvsG))][i];
+					end if;
+				else
+					MinInvsT := FindMinimalInvariants(PSL(2,q));
+					MinInvsG := FindMinimalInvariants(PGammaL(2,q));
+					bdT := (&+MinInvsT - n/2)/Sqrt(G);
+					bdG := (&+MinInvsG - n/2)/Sqrt(2*G);
+					mininvbd,i := Maximum([bdT,bdG]);
+					if mininvbd lt a then
+						a := mininvbd;
+						srcqm := ["PSL(2," cat Sprint(q) cat ") invariants; " cat Sprint(Multiset(MinInvsT)), "PGL(2," cat Sprint(q) cat ") invariants; " cat Sprint(Multiset(MinInvsG))][i];
+					end if;
+				end if;
+			end if;
+			
+			if m le 4 and q le 100 and ((m ge 4) or (m eq 3 and q ge 3) or (m eq 2 and (q ge 7 and q ne 9))) then
+				print q,m,a;
+				print srcqm;
+				print "";
+			end if;
+			
+			if (m ge 4) or (m eq 3 and q ge 3) or (m eq 2 and (q eq 8 or q ge 11)) then
+				if a ge aLinearNA then
+					aLinearNA := a;
+					srcq:=q;
+					srcm:=m;
+					src:=srcqm;
+				end if;
+			end if;
+		end if;
+	end for;
+end for;
+
+print "Largest value for linear groups without a graph automorphism:";
+print aLinearNA,srcm,srcq;
+print src;

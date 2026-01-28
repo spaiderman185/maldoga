@@ -1,0 +1,12 @@
+load "../find-invariants.mag";
+
+Gps := ["M11", "M12", "M22", "M22d2", "M23", "M24"];
+
+for S in Gps do
+	G := PermutationGroup(S);
+	print "";
+	print "Working with group",S;
+	time FindMinimalInvariants(G);
+end for;
+
+quit;
