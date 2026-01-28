@@ -1,0 +1,117 @@
+<!-- EAEAFF is light blue -->
+<!-- 2B3856 is dark blue -->
+<!-- FFFFF7 is cream -->
+
+<style type="text/css"> 
+/*This is a comment*/
+
+.spacebelow {
+     margin-bottom: 8;
+  }
+
+header{
+  font: 25pt copperplate;
+  color: #FFFFF7;
+  color: #334455;
+  background-color: #FFFFFF; 
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.15);
+  padding: 0 20px;
+  margin: 0px 0px;
+  border-radius: 10px;  
+  list-style: none;
+  position: relative;
+  display: inline-table;
+}
+
+img{border-radius: 0px;}
+
+table{
+  font: 13pt arial;
+  color: #334455;
+  background-color: #FFFFF7; 
+  box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+  padding: 0px 20px;
+  border-radius: 0px;  
+  list-style: none;
+  position: relative;
+  display: inline-table;
+}
+
+body 
+{
+  color: #000;
+  background-color: #2B3856;
+  background-color: #FFFFFF;
+  padding: 1.5em;
+  margin: 0;
+  font: 13pt Arial;
+  
+}
+
+h1
+{
+  margin: 8px;
+}
+
+nav ul ul {
+	display: none;
+}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+
+nav ul {
+	background-color: #334455; 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	padding: 0 20px;
+	border-radius: 0px;  
+	list-style: none;
+	position: relative;
+        z-index: 1;
+	display: inline-table;
+}
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+
+nav ul li {
+	float: left;
+}
+	nav ul li a {
+		color: #FFFFF7;
+	}
+	nav ul li:hover {
+		background: #FFFFFF;
+	}
+		nav ul li:hover a {
+			color: #334455;
+		}
+	
+	nav ul li a {
+		display: block; padding: 10px 25px;
+		color: #red; text-decoration: none;
+	}
+
+nav ul ul {
+	background: #FFFFFF; border-radius: 0px; padding: 0;
+	position: absolute; top: 100%;
+}
+	nav ul ul li {
+		float: none; 
+		border-top: 1px solid #334455;
+		border-bottom: 1px solid #334455;
+		position: relative;
+	}
+		nav ul ul li a {
+			padding: 15px 40px;
+			color: #gold;
+		}	
+			nav ul ul li a:hover {
+				background: #FFFFF7;
+			}
+
+
+
+</style>
