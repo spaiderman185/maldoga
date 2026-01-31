@@ -1,3 +1,0 @@
-This is the Magma code and output files related to the paper, "An approximate form of Artin's holomorphy conjecture and non-vanishing of Artin L-functions," by Robert J. Lemke Oliver, Jesse Thorner, and Asif Zaman.
-
-The file maximal-intersections-public.mag contains the code needed to verify Hypothesis T(G,N) for all groups G of bounded order or bounded degree.  In particular, it uses the algorithm suggested by Theorem 5.9 of the most recent revision.  The two output files (order-10-8-verification.txt and degree-40-verification.txt) are the certificates required for Corollary 5.10, which says that T(G,N) holds for all groups of order at most 10^8 and all groups with a faithful permutation representation of degree at most 40.
